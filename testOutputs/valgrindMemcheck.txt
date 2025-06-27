@@ -1,0 +1,41 @@
+==266== Memcheck, a memory error detector
+==266== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==266== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==266== Command: ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+==266== Parent PID: 1
+==266== 
+==266== 
+==266== HEAP SUMMARY:
+==266==     in use at exit: 200 bytes in 2 blocks
+==266==   total heap usage: 180 allocs, 178 frees, 106,238,068 bytes allocated
+==266== 
+==266== 8 bytes in 1 blocks are still reachable in loss record 1 of 2
+==266==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==266==    by 0x4C2E84C: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==266==    by 0x4C410BA: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==266==    by 0x4C2CFE1: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==266==    by 0x400647D: call_init.part.0 (dl-init.c:70)
+==266==    by 0x4006567: call_init (dl-init.c:33)
+==266==    by 0x4006567: _dl_init (dl-init.c:117)
+==266==    by 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+==266==    by 0xB: ???
+==266==    by 0x1FFF000CEA: ???
+==266==    by 0x1FFF000CF5: ???
+==266==    by 0x1FFF000CF8: ???
+==266==    by 0x1FFF000CFA: ???
+==266== 
+==266== 192 bytes in 1 blocks are still reachable in loss record 2 of 2
+==266==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==266==    by 0x4C2E84C: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==266==    by 0x4C3EE0B: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==266==    by 0x4C359F9: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==266==    by 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+==266== 
+==266== LEAK SUMMARY:
+==266==    definitely lost: 0 bytes in 0 blocks
+==266==    indirectly lost: 0 bytes in 0 blocks
+==266==      possibly lost: 0 bytes in 0 blocks
+==266==    still reachable: 200 bytes in 2 blocks
+==266==         suppressed: 0 bytes in 0 blocks
+==266== 
+==266== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

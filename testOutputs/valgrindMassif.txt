@@ -1,0 +1,1720 @@
+desc: --massif-out-file=/ProjectDir/testOutputs/valgrindMassif.txt
+cmd: ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=319809
+mem_heap_B=1984
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=322317
+mem_heap_B=8140
+mem_heap_extra_B=52
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=328165
+mem_heap_B=40956
+mem_heap_extra_B=60
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=332421
+mem_heap_B=40956
+mem_heap_extra_B=60
+mem_stacks_B=0
+heap_tree=detailed
+n5: 40956 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 32816 0x4D6930A: __alloc_dir (opendir.c:115)
+  n1: 32816 0x4D6930A: opendir_tail (opendir.c:63)
+   n1: 32816 0x4D6930A: opendir (opendir.c:86)
+    n1: 32816 0x4DA4B1F: get_nprocs_cpu (getsysstats.c:197)
+     n1: 32816 0x4DA4B1F: get_nprocs_conf (getsysstats.c:259)
+      n1: 32816 0x4D70765: posix_sysconf (sysconf.c:626)
+       n1: 32816 0x4D70765: linux_sysconf (sysconf.c:121)
+        n1: 32816 0x4D70765: sysconf (sysconf.c:36)
+         n1: 32816 0x4C370A2: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+          n1: 32816 0x4C22FE1: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+           n1: 32816 0x400647D: call_init.part.0 (dl-init.c:70)
+            n1: 32816 0x4006567: call_init (dl-init.c:33)
+             n1: 32816 0x4006567: _dl_init (dl-init.c:117)
+              n1: 32816 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+               n1: 32816 0xB: ???
+                n1: 32816 0x1FFF000CEA: ???
+                 n1: 32816 0x1FFF000CF5: ???
+                  n1: 32816 0x1FFF000CF8: ???
+                   n1: 32816 0x1FFF000CFA: ???
+                    n1: 32816 0x1FFF000CFE: ???
+                     n1: 32816 0x1FFF000D02: ???
+                      n1: 32816 0x1FFF000D06: ???
+                       n1: 32816 0x1FFF000D09: ???
+                        n1: 32816 0x1FFF000D15: ???
+                         n1: 32816 0x1FFF000D18: ???
+                          n1: 32816 0x1FFF000D24: ???
+                           n0: 32816 0x1FFF000D27: ???
+ n1: 4096 0x4CE0606: register_printf_specifier (reg-printf.c:57)
+  n1: 4096 0x4EAFB8D: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 4096 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 4096 0x4006567: call_init (dl-init.c:33)
+     n1: 4096 0x4006567: _dl_init (dl-init.c:117)
+      n1: 4096 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 4096 0xB: ???
+        n1: 4096 0x1FFF000CEA: ???
+         n1: 4096 0x1FFF000CF5: ???
+          n1: 4096 0x1FFF000CF8: ???
+           n1: 4096 0x1FFF000CFA: ???
+            n1: 4096 0x1FFF000CFE: ???
+             n1: 4096 0x1FFF000D02: ???
+              n1: 4096 0x1FFF000D06: ???
+               n1: 4096 0x1FFF000D09: ???
+                n1: 4096 0x1FFF000D15: ???
+                 n1: 4096 0x1FFF000D18: ???
+                  n1: 4096 0x1FFF000D24: ???
+                   n0: 4096 0x1FFF000D27: ???
+ n1: 2040 0x4CE27E6: register_printf_modifier (reg-modifier.c:69)
+  n1: 2040 0x4EAFB60: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 2040 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 2040 0x4006567: call_init (dl-init.c:33)
+     n1: 2040 0x4006567: _dl_init (dl-init.c:117)
+      n1: 2040 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 2040 0xB: ???
+        n1: 2040 0x1FFF000CEA: ???
+         n1: 2040 0x1FFF000CF5: ???
+          n1: 2040 0x1FFF000CF8: ???
+           n1: 2040 0x1FFF000CFA: ???
+            n1: 2040 0x1FFF000CFE: ???
+             n1: 2040 0x1FFF000D02: ???
+              n1: 2040 0x1FFF000D06: ???
+               n1: 2040 0x1FFF000D09: ???
+                n1: 2040 0x1FFF000D15: ???
+                 n1: 2040 0x1FFF000D18: ???
+                  n1: 2040 0x1FFF000D24: ???
+                   n0: 2040 0x1FFF000D27: ???
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n0: 20 in 1 place, below massif's threshold (1.00%)
+#-----------
+snapshot=5
+#-----------
+time=333378
+mem_heap_B=8148
+mem_heap_extra_B=68
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=350200
+mem_heap_B=8900
+mem_heap_extra_B=76
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=353315
+mem_heap_B=9002
+mem_heap_extra_B=102
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=356845
+mem_heap_B=13592
+mem_heap_extra_B=232
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=367479
+mem_heap_B=13608
+mem_heap_extra_B=240
+mem_stacks_B=0
+heap_tree=detailed
+n6: 13608 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 4096 0x4CE0606: register_printf_specifier (reg-printf.c:57)
+  n1: 4096 0x4EAFB8D: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 4096 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 4096 0x4006567: call_init (dl-init.c:33)
+     n1: 4096 0x4006567: _dl_init (dl-init.c:117)
+      n1: 4096 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 4096 0xB: ???
+        n1: 4096 0x1FFF000CEA: ???
+         n1: 4096 0x1FFF000CF5: ???
+          n1: 4096 0x1FFF000CF8: ???
+           n1: 4096 0x1FFF000CFA: ???
+            n1: 4096 0x1FFF000CFE: ???
+             n1: 4096 0x1FFF000D02: ???
+              n1: 4096 0x1FFF000D06: ???
+               n1: 4096 0x1FFF000D09: ???
+                n1: 4096 0x1FFF000D15: ???
+                 n1: 4096 0x1FFF000D18: ???
+                  n1: 4096 0x1FFF000D24: ???
+                   n0: 4096 0x1FFF000D27: ???
+ n3: 4064 0x4877E16: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n5: 3760 0x4AD1B76: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 752 0x4AD2135: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2150: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2184: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2224: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD22C4: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+  n1: 288 0x4AD3096: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 288 in 3 places, all below massif's threshold (1.00%)
+  n0: 16 in 1 place, below massif's threshold (1.00%)
+ n1: 2040 0x4CE27E6: register_printf_modifier (reg-modifier.c:69)
+  n1: 2040 0x4EAFB60: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 2040 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 2040 0x4006567: call_init (dl-init.c:33)
+     n1: 2040 0x4006567: _dl_init (dl-init.c:117)
+      n1: 2040 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 2040 0xB: ???
+        n1: 2040 0x1FFF000CEA: ???
+         n1: 2040 0x1FFF000CF5: ???
+          n1: 2040 0x1FFF000CF8: ???
+           n1: 2040 0x1FFF000CFA: ???
+            n1: 2040 0x1FFF000CFE: ???
+             n1: 2040 0x1FFF000D02: ???
+              n1: 2040 0x1FFF000D06: ???
+               n1: 2040 0x1FFF000D09: ???
+                n1: 2040 0x1FFF000D15: ???
+                 n1: 2040 0x1FFF000D18: ???
+                  n1: 2040 0x1FFF000D24: ???
+                   n0: 2040 0x1FFF000D27: ???
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n2: 1376 0x4877D88: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n3: 1280 0x4ADB465: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 512 0x4AD22A1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 512 0x4006567: call_init (dl-init.c:33)
+       n1: 512 0x4006567: _dl_init (dl-init.c:117)
+        n1: 512 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 512 0xB: ???
+          n1: 512 0x1FFF000CEA: ???
+           n1: 512 0x1FFF000CF5: ???
+            n1: 512 0x1FFF000CF8: ???
+             n1: 512 0x1FFF000CFA: ???
+              n1: 512 0x1FFF000CFE: ???
+               n1: 512 0x1FFF000D02: ???
+                n1: 512 0x1FFF000D06: ???
+                 n1: 512 0x1FFF000D09: ???
+                  n1: 512 0x1FFF000D15: ???
+                   n1: 512 0x1FFF000D18: ???
+                    n1: 512 0x1FFF000D24: ???
+                     n0: 512 0x1FFF000D27: ???
+   n1: 512 0x4AD2348: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 512 0x4006567: call_init (dl-init.c:33)
+       n1: 512 0x4006567: _dl_init (dl-init.c:117)
+        n1: 512 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 512 0xB: ???
+          n1: 512 0x1FFF000CEA: ???
+           n1: 512 0x1FFF000CF5: ???
+            n1: 512 0x1FFF000CF8: ???
+             n1: 512 0x1FFF000CFA: ???
+              n1: 512 0x1FFF000CFE: ???
+               n1: 512 0x1FFF000D02: ???
+                n1: 512 0x1FFF000D06: ???
+                 n1: 512 0x1FFF000D09: ???
+                  n1: 512 0x1FFF000D15: ???
+                   n1: 512 0x1FFF000D18: ???
+                    n1: 512 0x1FFF000D24: ???
+                     n0: 512 0x1FFF000D27: ???
+   n1: 256 0x4AD2203: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 256 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 256 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 256 0x4006567: call_init (dl-init.c:33)
+       n1: 256 0x4006567: _dl_init (dl-init.c:117)
+        n1: 256 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 256 0xB: ???
+          n1: 256 0x1FFF000CEA: ???
+           n1: 256 0x1FFF000CF5: ???
+            n1: 256 0x1FFF000CF8: ???
+             n1: 256 0x1FFF000CFA: ???
+              n1: 256 0x1FFF000CFE: ???
+               n1: 256 0x1FFF000D02: ???
+                n1: 256 0x1FFF000D06: ???
+                 n1: 256 0x1FFF000D09: ???
+                  n1: 256 0x1FFF000D15: ???
+                   n1: 256 0x1FFF000D18: ???
+                    n1: 256 0x1FFF000D24: ???
+                     n0: 256 0x1FFF000D27: ???
+  n0: 96 in 1 place, below massif's threshold (1.00%)
+ n0: 48 in 4 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=10
+#-----------
+time=371507
+mem_heap_B=14360
+mem_heap_extra_B=248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=389195
+mem_heap_B=14372
+mem_heap_extra_B=260
+mem_stacks_B=0
+heap_tree=detailed
+n6: 14372 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n3: 4816 0x4877E16: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n6: 4512 0x4AD1B76: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 752 0x4AD1D5C: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x4AD2647: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x4AD030C: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+      n1: 752 0x13E592: __ufit_functions_fortran_MOD_parse_command_args (in /ProjectDir/target/UFiT/Run_UFiT)
+       n0: 752 0x10B343: main (in /ProjectDir/target/UFiT/Run_UFiT)
+   n1: 752 0x4AD2135: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2150: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2184: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2224: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD22C4: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+  n1: 288 0x4AD3096: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 288 in 3 places, all below massif's threshold (1.00%)
+  n0: 16 in 3 places, all below massif's threshold (1.00%)
+ n1: 4096 0x4CE0606: register_printf_specifier (reg-printf.c:57)
+  n1: 4096 0x4EAFB8D: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 4096 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 4096 0x4006567: call_init (dl-init.c:33)
+     n1: 4096 0x4006567: _dl_init (dl-init.c:117)
+      n1: 4096 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 4096 0xB: ???
+        n1: 4096 0x1FFF000CEA: ???
+         n1: 4096 0x1FFF000CF5: ???
+          n1: 4096 0x1FFF000CF8: ???
+           n1: 4096 0x1FFF000CFA: ???
+            n1: 4096 0x1FFF000CFE: ???
+             n1: 4096 0x1FFF000D02: ???
+              n1: 4096 0x1FFF000D06: ???
+               n1: 4096 0x1FFF000D09: ???
+                n1: 4096 0x1FFF000D15: ???
+                 n1: 4096 0x1FFF000D18: ???
+                  n1: 4096 0x1FFF000D24: ???
+                   n0: 4096 0x1FFF000D27: ???
+ n1: 2040 0x4CE27E6: register_printf_modifier (reg-modifier.c:69)
+  n1: 2040 0x4EAFB60: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 2040 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 2040 0x4006567: call_init (dl-init.c:33)
+     n1: 2040 0x4006567: _dl_init (dl-init.c:117)
+      n1: 2040 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 2040 0xB: ???
+        n1: 2040 0x1FFF000CEA: ???
+         n1: 2040 0x1FFF000CF5: ???
+          n1: 2040 0x1FFF000CF8: ???
+           n1: 2040 0x1FFF000CFA: ???
+            n1: 2040 0x1FFF000CFE: ???
+             n1: 2040 0x1FFF000D02: ???
+              n1: 2040 0x1FFF000D06: ???
+               n1: 2040 0x1FFF000D09: ???
+                n1: 2040 0x1FFF000D15: ???
+                 n1: 2040 0x1FFF000D18: ???
+                  n1: 2040 0x1FFF000D24: ???
+                   n0: 2040 0x1FFF000D27: ???
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n2: 1376 0x4877D88: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n4: 1280 0x4ADB465: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 512 0x4AD22A1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 512 0x4006567: call_init (dl-init.c:33)
+       n1: 512 0x4006567: _dl_init (dl-init.c:117)
+        n1: 512 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 512 0xB: ???
+          n1: 512 0x1FFF000CEA: ???
+           n1: 512 0x1FFF000CF5: ???
+            n1: 512 0x1FFF000CF8: ???
+             n1: 512 0x1FFF000CFA: ???
+              n1: 512 0x1FFF000CFE: ???
+               n1: 512 0x1FFF000D02: ???
+                n1: 512 0x1FFF000D06: ???
+                 n1: 512 0x1FFF000D09: ???
+                  n1: 512 0x1FFF000D15: ???
+                   n1: 512 0x1FFF000D18: ???
+                    n1: 512 0x1FFF000D24: ???
+                     n0: 512 0x1FFF000D27: ???
+   n1: 512 0x4AD2348: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 512 0x4006567: call_init (dl-init.c:33)
+       n1: 512 0x4006567: _dl_init (dl-init.c:117)
+        n1: 512 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 512 0xB: ???
+          n1: 512 0x1FFF000CEA: ???
+           n1: 512 0x1FFF000CF5: ???
+            n1: 512 0x1FFF000CF8: ???
+             n1: 512 0x1FFF000CFA: ???
+              n1: 512 0x1FFF000CFE: ???
+               n1: 512 0x1FFF000D02: ???
+                n1: 512 0x1FFF000D06: ???
+                 n1: 512 0x1FFF000D09: ???
+                  n1: 512 0x1FFF000D15: ???
+                   n1: 512 0x1FFF000D18: ???
+                    n1: 512 0x1FFF000D24: ???
+                     n0: 512 0x1FFF000D27: ???
+   n1: 256 0x4AD2203: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 256 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 256 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 256 0x4006567: call_init (dl-init.c:33)
+       n1: 256 0x4006567: _dl_init (dl-init.c:117)
+        n1: 256 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 256 0xB: ???
+          n1: 256 0x1FFF000CEA: ???
+           n1: 256 0x1FFF000CF5: ???
+            n1: 256 0x1FFF000CF8: ???
+             n1: 256 0x1FFF000CFA: ???
+              n1: 256 0x1FFF000CFE: ???
+               n1: 256 0x1FFF000D02: ???
+                n1: 256 0x1FFF000D06: ???
+                 n1: 256 0x1FFF000D09: ???
+                  n1: 256 0x1FFF000D15: ???
+                   n1: 256 0x1FFF000D18: ???
+                    n1: 256 0x1FFF000D24: ???
+                     n0: 256 0x1FFF000D27: ???
+   n0: 0 in 1 place, below massif's threshold (1.00%)
+  n0: 96 in 1 place, below massif's threshold (1.00%)
+ n0: 60 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=12
+#-----------
+time=393205
+mem_heap_B=14360
+mem_heap_extra_B=248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=398036
+mem_heap_B=14372
+mem_heap_extra_B=260
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=401126
+mem_heap_B=145540
+mem_heap_extra_B=276
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=403255
+mem_heap_B=145540
+mem_heap_extra_B=276
+mem_stacks_B=0
+heap_tree=detailed
+n6: 145540 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 132448 0x4877D88: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 131072 0x4AD3154: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 131072 0x4AC877E: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 131072 0x4AC91DD: _gfortran_st_open (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 131072 0x13A30E: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+      n0: 131072 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1376 in 2 places, all below massif's threshold (1.00%)
+ n2: 4912 0x4877E16: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 4512 0x4AD1B76: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 4512 in 6 places, all below massif's threshold (1.00%)
+  n0: 400 in 4 places, all below massif's threshold (1.00%)
+ n1: 4096 0x4CE0606: register_printf_specifier (reg-printf.c:57)
+  n1: 4096 0x4EAFB8D: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 4096 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 4096 0x4006567: call_init (dl-init.c:33)
+     n1: 4096 0x4006567: _dl_init (dl-init.c:117)
+      n1: 4096 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 4096 0xB: ???
+        n1: 4096 0x1FFF000CEA: ???
+         n1: 4096 0x1FFF000CF5: ???
+          n1: 4096 0x1FFF000CF8: ???
+           n1: 4096 0x1FFF000CFA: ???
+            n1: 4096 0x1FFF000CFE: ???
+             n1: 4096 0x1FFF000D02: ???
+              n1: 4096 0x1FFF000D06: ???
+               n1: 4096 0x1FFF000D09: ???
+                n1: 4096 0x1FFF000D15: ???
+                 n1: 4096 0x1FFF000D18: ???
+                  n1: 4096 0x1FFF000D24: ???
+                   n0: 4096 0x1FFF000D27: ???
+ n1: 2040 0x4CE27E6: register_printf_modifier (reg-modifier.c:69)
+  n1: 2040 0x4EAFB60: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 2040 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 2040 0x4006567: call_init (dl-init.c:33)
+     n1: 2040 0x4006567: _dl_init (dl-init.c:117)
+      n1: 2040 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 2040 0xB: ???
+        n1: 2040 0x1FFF000CEA: ???
+         n1: 2040 0x1FFF000CF5: ???
+          n1: 2040 0x1FFF000CF8: ???
+           n1: 2040 0x1FFF000CFA: ???
+            n1: 2040 0x1FFF000CFE: ???
+             n1: 2040 0x1FFF000D02: ???
+              n1: 2040 0x1FFF000D06: ???
+               n1: 2040 0x1FFF000D09: ???
+                n1: 2040 0x1FFF000D15: ???
+                 n1: 2040 0x1FFF000D18: ???
+                  n1: 2040 0x1FFF000D24: ???
+                   n0: 2040 0x1FFF000D27: ???
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n0: 60 in 5 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=16
+#-----------
+time=406135
+mem_heap_B=14360
+mem_heap_extra_B=248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=408197
+mem_heap_B=14372
+mem_heap_extra_B=260
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=411160
+mem_heap_B=27384
+mem_heap_extra_B=320
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=422760
+mem_heap_B=28136
+mem_heap_extra_B=328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=426329
+mem_heap_B=28136
+mem_heap_extra_B=328
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=430873
+mem_heap_B=35644
+mem_heap_extra_B=372
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=434110
+mem_heap_B=35344
+mem_heap_extra_B=360
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=23
+#-----------
+time=436416
+mem_heap_B=35644
+mem_heap_extra_B=372
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=439227
+mem_heap_B=35344
+mem_heap_extra_B=360
+mem_stacks_B=0
+heap_tree=detailed
+n8: 35344 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n4: 14288 0x4877D88: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 8192 0x4AD3154: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 8192 0x4AC877E: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n2: 8192 0x4AC91DD: _gfortran_st_open (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 8192 0x13A425: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+      n0: 8192 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+     n0: 0 in 1 place, below massif's threshold (1.00%)
+  n1: 4176 0x4ABF017: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 4176 0x4AD05E7: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 4176 0x13A48D: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+     n0: 4176 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+  n4: 1792 0x4ADB465: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 512 0x4AC8C39: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x4AC91DD: _gfortran_st_open (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x13A425: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+      n0: 512 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+   n1: 512 0x4AD22A1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 512 0x4006567: call_init (dl-init.c:33)
+       n1: 512 0x4006567: _dl_init (dl-init.c:117)
+        n1: 512 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 512 0xB: ???
+          n1: 512 0x1FFF000CEA: ???
+           n1: 512 0x1FFF000CF5: ???
+            n1: 512 0x1FFF000CF8: ???
+             n1: 512 0x1FFF000CFA: ???
+              n1: 512 0x1FFF000CFE: ???
+               n1: 512 0x1FFF000D02: ???
+                n1: 512 0x1FFF000D06: ???
+                 n1: 512 0x1FFF000D09: ???
+                  n1: 512 0x1FFF000D15: ???
+                   n1: 512 0x1FFF000D18: ???
+                    n1: 512 0x1FFF000D24: ???
+                     n0: 512 0x1FFF000D27: ???
+   n1: 512 0x4AD2348: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 512 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 512 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 512 0x4006567: call_init (dl-init.c:33)
+       n1: 512 0x4006567: _dl_init (dl-init.c:117)
+        n1: 512 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 512 0xB: ???
+          n1: 512 0x1FFF000CEA: ???
+           n1: 512 0x1FFF000CF5: ???
+            n1: 512 0x1FFF000CF8: ???
+             n1: 512 0x1FFF000CFA: ???
+              n1: 512 0x1FFF000CFE: ???
+               n1: 512 0x1FFF000D02: ???
+                n1: 512 0x1FFF000D06: ???
+                 n1: 512 0x1FFF000D09: ???
+                  n1: 512 0x1FFF000D15: ???
+                   n1: 512 0x1FFF000D18: ???
+                    n1: 512 0x1FFF000D24: ???
+                     n0: 512 0x1FFF000D27: ???
+   n0: 256 in 2 places, all below massif's threshold (1.00%)
+  n0: 128 in 1 place, below massif's threshold (1.00%)
+ n3: 5664 0x4877E16: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n6: 5264 0x4AD1B76: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n2: 1504 0x4AD1D5C: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x4AC916F: _gfortran_st_open (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x13A425: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+      n0: 752 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+    n1: 752 0x4AD2647: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n2: 752 0x4AD030C: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+      n1: 752 0x13A8A5: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+       n0: 752 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+   n1: 752 0x4AD2135: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2150: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2184: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD2224: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+   n1: 752 0x4AD22C4: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n1: 752 0x48763D1: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 752 0x400647D: call_init.part.0 (dl-init.c:70)
+      n1: 752 0x4006567: call_init (dl-init.c:33)
+       n1: 752 0x4006567: _dl_init (dl-init.c:117)
+        n1: 752 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+         n1: 752 0xB: ???
+          n1: 752 0x1FFF000CEA: ???
+           n1: 752 0x1FFF000CF5: ???
+            n1: 752 0x1FFF000CF8: ???
+             n1: 752 0x1FFF000CFA: ???
+              n1: 752 0x1FFF000CFE: ???
+               n1: 752 0x1FFF000D02: ???
+                n1: 752 0x1FFF000D06: ???
+                 n1: 752 0x1FFF000D09: ???
+                  n1: 752 0x1FFF000D15: ???
+                   n1: 752 0x1FFF000D18: ???
+                    n1: 752 0x1FFF000D24: ???
+                     n0: 752 0x1FFF000D27: ???
+  n1: 384 0x4AD3096: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 384 in 4 places, all below massif's threshold (1.00%)
+  n0: 16 in 3 places, all below massif's threshold (1.00%)
+ n1: 4800 0x13C025: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 4800 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 4096 0x4CE0606: register_printf_specifier (reg-printf.c:57)
+  n1: 4096 0x4EAFB8D: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 4096 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 4096 0x4006567: call_init (dl-init.c:33)
+     n1: 4096 0x4006567: _dl_init (dl-init.c:117)
+      n1: 4096 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 4096 0xB: ???
+        n1: 4096 0x1FFF000CEA: ???
+         n1: 4096 0x1FFF000CF5: ???
+          n1: 4096 0x1FFF000CF8: ???
+           n1: 4096 0x1FFF000CFA: ???
+            n1: 4096 0x1FFF000CFE: ???
+             n1: 4096 0x1FFF000D02: ???
+              n1: 4096 0x1FFF000D06: ???
+               n1: 4096 0x1FFF000D09: ???
+                n1: 4096 0x1FFF000D15: ???
+                 n1: 4096 0x1FFF000D18: ???
+                  n1: 4096 0x1FFF000D24: ???
+                   n0: 4096 0x1FFF000D27: ???
+ n1: 2400 0x13BF95: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 2400 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 2040 0x4CE27E6: register_printf_modifier (reg-modifier.c:69)
+  n1: 2040 0x4EAFB60: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 2040 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 2040 0x4006567: call_init (dl-init.c:33)
+     n1: 2040 0x4006567: _dl_init (dl-init.c:117)
+      n1: 2040 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 2040 0xB: ???
+        n1: 2040 0x1FFF000CEA: ???
+         n1: 2040 0x1FFF000CF5: ???
+          n1: 2040 0x1FFF000CF8: ???
+           n1: 2040 0x1FFF000CFA: ???
+            n1: 2040 0x1FFF000CFE: ???
+             n1: 2040 0x1FFF000D02: ???
+              n1: 2040 0x1FFF000D06: ???
+               n1: 2040 0x1FFF000D09: ???
+                n1: 2040 0x1FFF000D15: ???
+                 n1: 2040 0x1FFF000D18: ???
+                  n1: 2040 0x1FFF000D24: ???
+                   n0: 2040 0x1FFF000D27: ???
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n0: 72 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=25
+#-----------
+time=441532
+mem_heap_B=35644
+mem_heap_extra_B=372
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=444343
+mem_heap_B=35344
+mem_heap_extra_B=360
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=449062
+mem_heap_B=27152
+mem_heap_extra_B=352
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=449688
+mem_heap_B=21568
+mem_heap_extra_B=280
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=455758
+mem_heap_B=21580
+mem_heap_extra_B=292
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=457896
+mem_heap_B=21580
+mem_heap_extra_B=292
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=31
+#-----------
+time=460793
+mem_heap_B=22320
+mem_heap_extra_B=288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=465104
+mem_heap_B=153500
+mem_heap_extra_B=316
+mem_stacks_B=0
+heap_tree=detailed
+n8: 153500 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 132448 0x4877D88: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 131072 0x4AD3154: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n1: 131072 0x4AC877E: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+    n2: 131072 0x4AC91DD: _gfortran_st_open (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+     n1: 131072 0x1381D3: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+      n0: 131072 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+     n0: 0 in 2 places, all below massif's threshold (1.00%)
+  n0: 1376 in 3 places, all below massif's threshold (1.00%)
+ n2: 5664 0x4877E16: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+  n1: 5264 0x4AD1B76: ??? (in /usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0)
+   n0: 5264 in 6 places, all below massif's threshold (1.00%)
+  n0: 400 in 4 places, all below massif's threshold (1.00%)
+ n1: 4800 0x13C025: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 4800 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 4096 0x4CE0606: register_printf_specifier (reg-printf.c:57)
+  n1: 4096 0x4EAFB8D: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 4096 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 4096 0x4006567: call_init (dl-init.c:33)
+     n1: 4096 0x4006567: _dl_init (dl-init.c:117)
+      n1: 4096 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 4096 0xB: ???
+        n1: 4096 0x1FFF000CEA: ???
+         n1: 4096 0x1FFF000CF5: ???
+          n1: 4096 0x1FFF000CF8: ???
+           n1: 4096 0x1FFF000CFA: ???
+            n1: 4096 0x1FFF000CFE: ???
+             n1: 4096 0x1FFF000D02: ???
+              n1: 4096 0x1FFF000D06: ???
+               n1: 4096 0x1FFF000D09: ???
+                n1: 4096 0x1FFF000D15: ???
+                 n1: 4096 0x1FFF000D18: ???
+                  n1: 4096 0x1FFF000D24: ???
+                   n0: 4096 0x1FFF000D27: ???
+ n1: 2400 0x13BF95: __ufit_functions_fortran_MOD_load_input (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 2400 0x10B34D: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 2040 0x4CE27E6: register_printf_modifier (reg-modifier.c:69)
+  n1: 2040 0x4EAFB60: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 2040 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 2040 0x4006567: call_init (dl-init.c:33)
+     n1: 2040 0x4006567: _dl_init (dl-init.c:117)
+      n1: 2040 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 2040 0xB: ???
+        n1: 2040 0x1FFF000CEA: ???
+         n1: 2040 0x1FFF000CF5: ???
+          n1: 2040 0x1FFF000CF8: ???
+           n1: 2040 0x1FFF000CFA: ???
+            n1: 2040 0x1FFF000CFE: ???
+             n1: 2040 0x1FFF000D02: ???
+              n1: 2040 0x1FFF000D06: ???
+               n1: 2040 0x1FFF000D09: ???
+                n1: 2040 0x1FFF000D15: ???
+                 n1: 2040 0x1FFF000D18: ???
+                  n1: 2040 0x1FFF000D24: ???
+                   n0: 2040 0x1FFF000D27: ???
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n0: 68 in 6 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=33
+#-----------
+time=467547
+mem_heap_B=153988
+mem_heap_extra_B=332
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=595470811
+mem_heap_B=95817548
+mem_heap_extra_B=3164
+mem_stacks_B=0
+heap_tree=detailed
+n2: 95817548 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 158324 in 16 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=35
+#-----------
+time=595474005
+mem_heap_B=105767376
+mem_heap_extra_B=5688
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=60279364205
+mem_heap_B=105767376
+mem_heap_extra_B=5688
+mem_stacks_B=0
+heap_tree=peak
+n4: 105767376 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 8640000 0x113941: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8640000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 1440000 0x113C1E: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1440000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 28152 in 17 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=37
+#-----------
+time=60279365078
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=60279369549
+mem_heap_B=105770869
+mem_heap_extra_B=5699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=60279372992
+mem_heap_B=105770997
+mem_heap_extra_B=5707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=60279375369
+mem_heap_B=105770869
+mem_heap_extra_B=5699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=60279378792
+mem_heap_B=105770997
+mem_heap_extra_B=5707
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=60279381169
+mem_heap_B=105770869
+mem_heap_extra_B=5699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=60279384597
+mem_heap_B=105770997
+mem_heap_extra_B=5707
+mem_stacks_B=0
+heap_tree=detailed
+n4: 105770997 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 8640000 0x113941: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8640000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 1440000 0x113C1E: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1440000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 31773 in 26 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=44
+#-----------
+time=60279386974
+mem_heap_B=105770869
+mem_heap_extra_B=5699
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=60279390048
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=60279393030
+mem_heap_B=105766622
+mem_heap_extra_B=5666
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=60279397028
+mem_heap_B=105766629
+mem_heap_extra_B=5675
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=60279399912
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=60279401963
+mem_heap_B=105766714
+mem_heap_extra_B=5678
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=60279402882
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=60279403897
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=detailed
+n4: 105766688 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 8640000 0x113941: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8640000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 1440000 0x113C1E: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1440000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 27464 in 38 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=52
+#-----------
+time=60279404998
+mem_heap_B=105766643
+mem_heap_extra_B=5677
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=60279405948
+mem_heap_B=105766728
+mem_heap_extra_B=5696
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=60279406866
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=60279407881
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=60279408982
+mem_heap_B=105766650
+mem_heap_extra_B=5670
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=60279409932
+mem_heap_B=105766742
+mem_heap_extra_B=5682
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=60279410849
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=59
+#-----------
+time=60279411864
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=60
+#-----------
+time=60279412965
+mem_heap_B=105766657
+mem_heap_extra_B=5679
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=60279413915
+mem_heap_B=105766756
+mem_heap_extra_B=5700
+mem_stacks_B=0
+heap_tree=detailed
+n4: 105766756 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 8640000 0x113941: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8640000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 1440000 0x113C1E: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1440000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 27532 in 46 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=62
+#-----------
+time=60279414831
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=60279415846
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=60279416947
+mem_heap_B=105766664
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=60279417897
+mem_heap_B=105766770
+mem_heap_extra_B=5686
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=60279418812
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=60279419827
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=60279420928
+mem_heap_B=105766671
+mem_heap_extra_B=5665
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=60279421878
+mem_heap_B=105766784
+mem_heap_extra_B=5688
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=70
+#-----------
+time=60279422792
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=60279423807
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=detailed
+n4: 105766688 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 8640000 0x113941: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8640000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 1440000 0x113C1E: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1440000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 27464 in 53 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=72
+#-----------
+time=60279424908
+mem_heap_B=105766678
+mem_heap_extra_B=5674
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=60279425858
+mem_heap_B=105766798
+mem_heap_extra_B=5690
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=60279426771
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=75
+#-----------
+time=60279427786
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=76
+#-----------
+time=60279428887
+mem_heap_B=105766685
+mem_heap_extra_B=5667
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=77
+#-----------
+time=60279429837
+mem_heap_B=105766812
+mem_heap_extra_B=5676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=78
+#-----------
+time=60279430749
+mem_heap_B=105766656
+mem_heap_extra_B=5664
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=79
+#-----------
+time=60279431764
+mem_heap_B=105766688
+mem_heap_extra_B=5672
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=80
+#-----------
+time=60279432823
+mem_heap_B=105766692
+mem_heap_extra_B=5676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=81
+#-----------
+time=60279433773
+mem_heap_B=105766826
+mem_heap_extra_B=5694
+mem_stacks_B=0
+heap_tree=detailed
+n4: 105766826 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 95659224 0x13973F: __ufit_functions_fortran_MOD_load_bfield (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 95659224 0x10B352: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 8640000 0x113941: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8640000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n1: 1440000 0x113C1E: __ufit_functions_fortran_MOD_run_trace (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 1440000 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+ n0: 27602 in 61 places, all below massif's threshold (1.00%)
+#-----------
+snapshot=82
+#-----------
+time=60279437283
+mem_heap_B=105766572
+mem_heap_extra_B=5668
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=83
+#-----------
+time=60279439506
+mem_heap_B=105897740
+mem_heap_extra_B=5684
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=84
+#-----------
+time=60420570494
+mem_heap_B=105766668
+mem_heap_extra_B=5676
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=85
+#-----------
+time=60420571128
+mem_heap_B=105758112
+mem_heap_extra_B=5600
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=86
+#-----------
+time=60420574435
+mem_heap_B=13800
+mem_heap_extra_B=248
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=87
+#-----------
+time=60420575074
+mem_heap_B=12554
+mem_heap_extra_B=174
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=88
+#-----------
+time=60420575977
+mem_heap_B=9754
+mem_heap_extra_B=134
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=89
+#-----------
+time=60420581634
+mem_heap_B=8320
+mem_heap_extra_B=56
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=90
+#-----------
+time=60420582710
+mem_heap_B=6280
+mem_heap_extra_B=40
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=91
+#-----------
+time=60420583959
+mem_heap_B=2184
+mem_heap_extra_B=32
+mem_stacks_B=0
+heap_tree=detailed
+n3: 2184 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 1984 0x4CE2A5E: register_printf_type (reg-type.c:43)
+  n1: 1984 0x4EAFB45: ??? (in /usr/lib/x86_64-linux-gnu/libquadmath.so.0.0.0)
+   n1: 1984 0x400647D: call_init.part.0 (dl-init.c:70)
+    n1: 1984 0x4006567: call_init (dl-init.c:33)
+     n1: 1984 0x4006567: _dl_init (dl-init.c:117)
+      n1: 1984 0x40202C9: ??? (in /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2)
+       n1: 1984 0xB: ???
+        n1: 1984 0x1FFF000CEA: ???
+         n1: 1984 0x1FFF000CF5: ???
+          n1: 1984 0x1FFF000CF8: ???
+           n1: 1984 0x1FFF000CFA: ???
+            n1: 1984 0x1FFF000CFE: ???
+             n1: 1984 0x1FFF000D02: ???
+              n1: 1984 0x1FFF000D06: ???
+               n1: 1984 0x1FFF000D09: ???
+                n1: 1984 0x1FFF000D15: ???
+                 n1: 1984 0x1FFF000D18: ???
+                  n1: 1984 0x1FFF000D24: ???
+                   n0: 1984 0x1FFF000D27: ???
+ n2: 200 0x4C2484C: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+  n1: 192 0x4C34E0B: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+   n1: 192 0x4C2B9F9: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+    n0: 192 0x10B361: main (in /ProjectDir/target/UFiT/Run_UFiT)
+  n0: 8 in 1 place, below massif's threshold (1.00%)
+ n0: 0 in 63 places, all below massif's threshold (1.00%)

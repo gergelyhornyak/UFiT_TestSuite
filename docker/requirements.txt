@@ -1,0 +1,11 @@
+numpy==1.26
+matplotlib
+gprof2dot
+#mayavi
+#configobj
+#pyqt5
+astropy
+pfsspy
+sunpy
+wget
+latex

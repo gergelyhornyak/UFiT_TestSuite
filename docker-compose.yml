@@ -1,0 +1,8 @@
+services:
+  test-suite:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: testSuiteContainer
+    volumes:
+      - ./testOutputs:/ProjectDir/testOutputs

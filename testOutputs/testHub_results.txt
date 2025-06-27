@@ -1,0 +1,619 @@
+[==========] Running 15 tests from 3 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from TestUFiTCommandLine
+[ RUN      ] TestUFiTCommandLine.TestStepSize
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+1. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+2. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.050000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+3. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.500000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+4. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 5.000000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+5. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT  -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+6. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT  -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+7. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl -0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+8. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 340282346638528859811704183484516925440.000000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+9. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl -340282346638528859811704183484516925440.000000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+10. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.000000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+11. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl -0.000000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:17: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+[  FAILED  ] TestUFiTCommandLine.TestStepSize (24 ms)
+[ RUN      ] TestUFiTCommandLine.TestMaxSteps
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+1. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+2. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms -5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+3. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000  -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+4. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000  -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+5. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 2147483647 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+6. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms -2147483648 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+7. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms -2147483647 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+8. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms -2147483648 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:35: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+[  FAILED  ] TestUFiTCommandLine.TestMaxSteps (16 ms)
+[ RUN      ] TestUFiTCommandLine.TestGeometry
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+1. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq   -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+2. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+3. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 2 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+4. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 3 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+5. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 4 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+6. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 5 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+7. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g -1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+8. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g -2 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+9. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g -3 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+10. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g 2147483647 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+11. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g -2147483648 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+12. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g -2147483647 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+13. TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq  -g -2147483648 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:53: Failure
+Expected equality of these values:
+  exitCodes[i]
+    Which is: 28416
+  expectedExitCodes[i]
+    Which is: 1
+Program did not execute successfully, exit code: 28416
+
+
+[  FAILED  ] TestUFiTCommandLine.TestGeometry (26 ms)
+[ RUN      ] TestUFiTCommandLine.TestPeriodicPhi
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4 -pp  -se  -sf  -sq   -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:64: Failure
+Expected equality of these values:
+  exitCodesTrue
+    Which is: 28416
+  expectedExitCodesTrue
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufitdipole.inp
+TEST NAME
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005000 -ms 5000 -np 4  -se  -sf  -sq   -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
+/ProjectDir/testSuite/src/BlackBoxTest.cpp:71: Failure
+Expected equality of these values:
+  exitCodesFalse
+    Which is: 28416
+  expectedExitCodesFalse
+    Which is: 0
+Program did not execute successfully, exit code: 28416
+
+
+[  FAILED  ] TestUFiTCommandLine.TestPeriodicPhi (4 ms)
+[----------] 4 tests from TestUFiTCommandLine (72 ms total)
+
+[----------] 8 tests from TestGBTUFiTCommandLine
+[ RUN      ] TestGBTUFiTCommandLine.TestCorrectInputFile
+TEST NAME: correct input file 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.bin -i $TEST_TARGET/$TEST_TARGET_NAME/ufitdipole.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestCorrectInputFile (530 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestMissingInputFile
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ ufit.inp
+TEST NAME: missing input file 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.bin -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestMissingInputFile (5 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestWrongInputFile
+ Unable to open input file
+ This is required for the field line starts
+ Attemped to read filename: 
+ /ProjectDir/target/UFiT/ufitInput.inp
+TEST NAME: wrong input file 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.bin -i $TEST_TARGET/$TEST_TARGET_NAME/ufitInput.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestWrongInputFile (2 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestCorrectBFile
+TEST NAME: correct B file 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.bin -i $TEST_TARGET/$TEST_TARGET_NAME/ufitdipole.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestCorrectBFile (575 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestMissingBFile
+ Unable to open B field file
+ Attemped to read filename: 
+ ufit.bin
+TEST NAME: missing B file 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -i $TEST_TARGET/$TEST_TARGET_NAME/ufitdipole.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestMissingBFile (2 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestWrongBFile
+ Unable to open B field file
+ Attemped to read filename: 
+ /ProjectDir/target/UFiT/ufitbfile.bin
+TEST NAME: wrong B file 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufitbfile.bin -i $TEST_TARGET/$TEST_TARGET_NAME/ufitdipole.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestWrongBFile (2 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestInvalidCLA
+ unrecognised command-line option: -test
+ unrecognised command-line option: 1
+TEST NAME: invalid CLA 
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -test 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.bin -i $TEST_TARGET/$TEST_TARGET_NAME/ufitdipole.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestInvalidCLA (553 ms)
+[ RUN      ] TestGBTUFiTCommandLine.TestSequentialRun
+TEST NAME: run program twice, consequitively
+CMD: $TEST_TARGET/$TEST_TARGET_NAME/Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.bin -i $TEST_TARGET/$TEST_TARGET_NAME/ufitdipole.inp -o $TEST_TARGET/$TEST_TARGET_NAME/ufit_dipole.flf
+[       OK ] TestGBTUFiTCommandLine.TestSequentialRun (1098 ms)
+[----------] 8 tests from TestGBTUFiTCommandLine (2770 ms total)
+
+[----------] 3 tests from RegressionTest
+[ RUN      ] RegressionTest.BinaryOutputMatch
+ Unable to open command file
+ Specify a valid command file, or pass command line arguments
+ Attemped to read filename: 
+ ufit.dat
+/ProjectDir/testSuite/src/RegressionTest.cpp:20: Failure
+Expected equality of these values:
+  ret
+    Which is: 28160
+  0
+Fortran program execution failed
+
+[  FAILED  ] RegressionTest.BinaryOutputMatch (2 ms)
+[ RUN      ] RegressionTest.PerformanceBenchmark
+ Unable to open command file
+ Specify a valid command file, or pass command line arguments
+ Attemped to read filename: 
+ ufit.dat
+/ProjectDir/testSuite/src/RegressionTest.cpp:36: Failure
+Expected equality of these values:
+  ret
+    Which is: 28160
+  0
+Fortran program execution failed
+
+[  FAILED  ] RegressionTest.PerformanceBenchmark (1 ms)
+[ RUN      ] RegressionTest.TestUfitDipoleFLF
+Requires 2 successful run of UFiT to check output filesold output_flf length: 0
+new output_flf length: 0
+[       OK ] RegressionTest.TestUfitDipoleFLF (1038 ms)
+[----------] 3 tests from RegressionTest (1043 ms total)
+
+[----------] Global test environment tear-down
+[==========] 15 tests from 3 test suites ran. (3886 ms total)
+[  PASSED  ] 9 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] TestUFiTCommandLine.TestStepSize
+[  FAILED  ] TestUFiTCommandLine.TestMaxSteps
+[  FAILED  ] TestUFiTCommandLine.TestGeometry
+[  FAILED  ] TestUFiTCommandLine.TestPeriodicPhi
+[  FAILED  ] RegressionTest.BinaryOutputMatch
+[  FAILED  ] RegressionTest.PerformanceBenchmark
+
+ 6 FAILED TESTS
