@@ -2,7 +2,8 @@ name: Run UFIT tests
 
 on:
   push:
-    branches: [ "test" ]
+    branches: 
+      - test
 
 jobs:
 
@@ -12,5 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Pull latest UFIT
+      run: git clone https://github.com/Valentin-Aslanyan/UFiT.git
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
