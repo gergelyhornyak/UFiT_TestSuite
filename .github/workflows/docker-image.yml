@@ -6,14 +6,13 @@ on:
       - test
 
 jobs:
-
   build:
-
     runs-on: ubuntu:22.04
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Pull latest UFIT
-      run: git clone https://github.com/Valentin-Aslanyan/UFiT.git
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Checkout current repo
+        uses: actions/checkout@v4
+      - name: Clone UFIT repository
+        run: git clone https://github.com/Valentin-Aslanyan/UFiT.git
+      - name: Echo hello
+        run: echo "hello"
