@@ -17,5 +17,6 @@ Table Of Content:
 
 Branches:
 
-main, develop, feature branches, fix branches
+main, develop, test
+
 
