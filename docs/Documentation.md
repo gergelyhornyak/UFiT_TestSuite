@@ -39,6 +39,28 @@ Repository architecture is as follows:
 
 <div style="page-break-after: always;"></div>
 
+## Fortran Interoperability
+
+### Files
+
+### Modules
+
+### Subroutines
+
+`extern "C"`
+
+`void __ufit_functions_fortran_MOD_intercept_boundary_c000(double* pos_in, double* direction, double* delta_out);`
+
+### Functions
+
+`float __ufit_functions_fortran_MOD_vecdot(float *vec1, float *vec2);`
+
+### Global variables
+
+`extern double __ufit_functions_fortran_MOD_grid1max;`
+
+### Local variables
+
 ## Test Extensibility
 
 Unit tests are written in C++ ([docs](https://en.cppreference.com/w/)) and it uses GoogleTest framework ([docs](https://google.github.io/googletest/)). In order to extend the test suite with new unit tests, developers can add a new `TEST()` section inside the appropriate source file in the **src/** directory, in the following way:
