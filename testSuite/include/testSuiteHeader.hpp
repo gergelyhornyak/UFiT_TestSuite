@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string.h>
+#include <cstring>
 #include <gtest/gtest.h>
 #include <fstream>
 #include <cstdlib>
