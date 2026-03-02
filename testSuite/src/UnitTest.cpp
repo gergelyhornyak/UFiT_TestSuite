@@ -1,6 +1,24 @@
 #include "testSuiteHeader.hpp"
 
-extern "C" float __ufit_functions_fortran_MOD_vecdot(float *vec1, float *vec2);
+
+/* 78 subroutine
+ORDER:
+initialize_variables,
+parse_command_args
+parse_command_file
+load_input
+load_Bfield
+process_Bfield
+get_available_resource
+run_trace
+write_output
+cleanup
+*/
+
+extern "C" {
+    
+    float __ufit_functions_fortran_MOD_vecdot(float *vec1, float *vec2);
+} 
 
 TEST(TestUTUFiTFunction, TestVecdot) {
 
