@@ -2,40 +2,29 @@
 
 ## Setup
 
-**How to setup the test suite?**
+[**How to setup the test suite?**](Setup.md)
 
-1) Clone this repository
-2) Install docker and docker-compose: \
-      `(sudo) apt-get install docker docker.io docker-compose`
-3) Run the following command: \* \
-      `(sudo) docker compose up (--build)` 
-4) You should see the logs in the command line, or
-5) Check them afterwards using: \
-      `(sudo) docker logs testSuiteContainer`
-6) You should find the results in the /testOutputs directory
-      - GoogleTest results **gtest_report.html** can be opened in a browser
-      - LCov code coverage index.html can be opened in a browser
-
-\* `sudo` if not superuser, `--build` if you want to rebuild the base image
-
-> This usually takes around between 10-13m. \
-> Running the container without benchmarking is usually 5m.
+You should find the results in the /testOutputs directory:
+- GoogleTest results **gtest_report.html** can be opened in a browser
+- LCov code coverage index.html can be opened in a browser
 
 ## Repository Architecture
 
 Repository architecture is as follows:
 
-- root: Dockerfile and docker-compose.yml for running Docker containers, and the README
+- root: Dockerfile for running Docker container, and the README
 - /.github: github workflow directory for automated tests,
 - /docker: contains the main script and the python venv requirements
 - /docs: documentation directory,
-- /target: directory for target source code UFiT
+- /target [*automatically created*]: directory for target source code UFiT
 - /testOutputs: output of the test suite, including figure(s), data, log(s)
 - /testSuite:
     - /testSuite/addons: Python script(s) for mainly plotting the profiling data
     - /testSuite/src: source file(s) of the unit test(s)
     - /testSuite/include: header file(s) of the unit test(s)
     - /testSuite/goldenFiles: golden files for checking outputs or inputs
+- /testInputs:
+    - ufit.dat
 
 <div style="page-break-after: always;"></div>
 
@@ -61,7 +50,9 @@ Repository architecture is as follows:
 
 ### Local variables
 
-## Test Extensibility
+inaccessible
+
+## GoogleTest Extensibility
 
 Unit tests are written in C++ ([docs](https://en.cppreference.com/w/)) and it uses GoogleTest framework ([docs](https://google.github.io/googletest/)). In order to extend the test suite with new unit tests, developers can add a new `TEST()` section inside the appropriate source file in the **src/** directory, in the following way:
  
@@ -102,6 +93,27 @@ In case any new 3rd Party Software is introduced to the UFiT, and is mandatory f
 
 > Important note: if the UFiT repository structure changes, any file name changes or any source code is changed which affects the command line functionality, then the Test Suite should be altered accordingly, to reflect the changes.
 
----
+## Docker notes
 
-*April 5, 2025*
+Docker is used for a completely isolated virtual environment, to make sure runs are reproducible. This setup uses:
+- multi-stage separation, where the builder stage handles the GoogleTest installation, and the main dependencies, while the runner stage starts your final image.
+- layer optimization to create fewer layers by chaining commands with '&&' and backslashes.
+- cache cleanup: `rm -rf /var/lib/apt/lists/*` ensures the ubuntu image to not keep a cache of available packages inside the image
+- additional packages avoided: this prevents the ubuntu base image from installing extra packages with `--no-install-recommends`
+
+![docker layout](../images/structure.png)
+
+Figure of the docker container tasks and the local volume relations.
+
+The docker container has access to the local drive, and fetches the input directory content before each run. Additionally places the output data into the output directory for the user.
+
+> In case of storage overflow, run `docker -D ps` to see the built images.
+
+TODO
+
+- develop a technique to address and intercept Fortran data in a CPP function
+- create a set of test routines to be used, when new versions are pushed to Github
+- evaluate performance on a range of hardware.
+
+*20. March, 2026*
+
