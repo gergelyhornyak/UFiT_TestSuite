@@ -7,23 +7,28 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "-O3")
 
 set(UFIT_DIR "/ProjectDir/target/UFiT")
-set(OBJECT_FILES
-    ${UFIT_DIR}/UFiT_Definitions_Fortran.o
-    ${UFIT_DIR}/UFiT_User_Functions.o
-    ${UFIT_DIR}/UFiT_Functions_Fortran.o
-    ${UFIT_DIR}/UFiT_Python_Callable.o
-)
 
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
+# set(OBJECT_FILES
+#     ${UFIT_DIR}/UFiT_Definitions_Fortran.o
+#     ${UFIT_DIR}/UFiT_User_Functions.o
+#     ${UFIT_DIR}/UFiT_Functions_Fortran.o
+#     ${UFIT_DIR}/UFiT_Python_Callable.o
+#)
+add_library(UFiT_Fortran_Lib STATIC
+    ${UFIT_DIR}/UFiT_Definitions_Fortran.F90
+    ${UFIT_DIR}/UFiT_User_Functions.F90
+    ${UFIT_DIR}/UFiT_Functions_Fortran.F90
+    ${UFIT_DIR}/UFiT_Python_Callable.F90
+)
 
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)    
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+# file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)    
+# set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
+# file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
+# SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 
 add_executable(TestHub 
     src/TestHub.cpp 
@@ -32,12 +37,13 @@ add_executable(TestHub
     src/RegressionTest.cpp 
     src/initialize_variables_UnitTest.cpp
     src/testSuiteHeader.cpp   
-    ${OBJECT_FILES}
+    #${OBJECT_FILES}
 )
 target_link_libraries(TestHub PRIVATE 
     GTest::gtest
     GTest::gtest_main
     gfortran
+    UFiT_Fortran_Lib
 )
 target_include_directories(TestHub PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 

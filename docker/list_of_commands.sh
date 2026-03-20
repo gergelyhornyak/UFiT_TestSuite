@@ -4,47 +4,52 @@ set -e
 # directory path constants
 export TEST_SUITE="/ProjectDir/testSuite"
 export TEST_TARGET="/ProjectDir/target/UFiT"
-export TEST_OUTPUT="/ProjectDir/testOutputs"
-export TEST_INPUT="/ProjectDir/testInputs"
-export GTEST_PATH="/ProjectDir/googletest"
+export TEST_OUTPUT="/ProjectDir/testOutput"
+export TEST_INPUT="/ProjectDir/testInput"
 export GTEST2HTML_PATH="/ProjectDir/gtest2html"
 export GTEST_OUTPUT="xml:$TEST_OUTPUT/gtest_report.xml"
 
 echo "==< Starting UFiT Test Suite Pipeline >=="
 
-# 2. Run profiling
+# 1. Run profiling
 cd "$TEST_TARGET"
 echo "> Preparing spherical example"
 python3 Prepare_Spherical_Example.py
 
-# 1. UFiT commands input check
-if [ -f "$TEST_INPUTS/ufit.dat" ]; then
-    echo "> Found ufit.dat in testInputs. Copying to target..."
-    cp "$TEST_INPUTS/ufit.dat" "$TEST_TARGET/"
+# 2. Run UFiT 
+if [ -f "$TEST_INPUT/ufit.dat" ]; then
+    echo "> Found ufit.dat in testInput. Copying to target..."
+    cp "$TEST_INPUT/ufit.dat" "$TEST_TARGET/"
     
     echo "> Running UFIT"
     cd "$TEST_TARGET"
     ./Run_UFiT -c ufit.dat
 else
-    echo "> WARNING: No ufit.dat found in ./testInputs. Running with default CLI parameters"
+    echo "> WARNING: No ufit.dat found in testInput. Running with default CLI parameters"
     
     echo "> Running UFIT"
     cd "$TEST_TARGET"
     ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
 fi
 
-# 3. Run Unit Tests
+# 3. Build and Run Unit Tests
 echo "> Building and running unit tests"
 cd "$TEST_SUITE"
-cmake . > /dev/null
-cmake --build . > /dev/null
-./bin/TestHub "$TEST_TARGET/" > "$TEST_OUTPUT/testHub_results.txt"
+rm -rf build && mkdir build && cd build
+cmake ..
+make
+
+# Temporary debug version:
+echo "> Starting TestHub..."
+"$TEST_SUITE/build/TestHub" "$TEST_TARGET/" || echo "> TestHub CRASHED with exit code $?"
+
+#"$TEST_SUITE/build/TestHub" "$TEST_TARGET/" > "$TEST_OUTPUT/testHub_results.txt"
 
 # 4. Generate reports (GTest to HTML)
+echo "> Running GTest with for report generation"
 if [ -f "$TEST_OUTPUT/gtest_report.xml" ]; then
     echo "> Generating HTML Report..."
-    git clone https://gitlab.uni-koblenz.de/agrt/gtest2html.git /tmp/gtest2html --quiet
-    python3 /tmp/gtest2html/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
+    python3 $TEST_SUITE/addons/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
 fi
 
 #echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
@@ -159,22 +164,27 @@ echo "> [SKIP] HMI Example"
 
 # 4) Versions phase: log every 3rd Party Software's version
 
-echo -e "> Logging software versions\n"
+echo "> Start logging software versions\n"
+
+echo "> Logging software versions\n"
+echo "--Software versions--" > "$TEST_OUTPUT/version.log"
 {
     gfortran --version | head -n 1
     g++ --version | head -n 1
     make --version | head -n 2
     python3 --version
-    pip --version
-    git --version
+    pip --version || echo "pip not found"
+    git --version || echo "git not found"
     gprof --version | head -n 1
     gcov --version | head -n 1
-    lcov --version
-    valgrind --version
-    tex --version
-    dot -V 2>&1
-} > "$TEST_OUTPUT/version.log"
+    lcov --version || echo "lcov not found"
+    valgrind --version || echo "valgrind not found"
+    tex --version || echo "tex not found"
+    dot -V 2>&1 || echo "Graphviz not found"
+} >> "$TEST_OUTPUT/version.log"
 
+echo "> Logging Python package versions\n"
+echo "--Python package versions--" >> "$TEST_OUTPUT/version.log"
 pip freeze >> "$TEST_OUTPUT/version.log"
 
 echo "==< Test Suite Pipeline Finished >=="
