@@ -12,21 +12,26 @@ export GTEST_OUTPUT="xml:$TEST_OUTPUT/gtest_report.xml"
 
 echo "==< Starting UFiT Test Suite Pipeline >=="
 
-# 1. UFiT commands input check
-if [ -f "$TEST_INPUTS/ufit.dat" ]; then
-    echo "> Found ufit.dat in testInputs. Copying to target..."
-    cp "$TEST_INPUTS/ufit.dat" "$TEST_TARGET/"
-else
-    echo "> WARNING: No ufit.dat found in ./testInputs. Using defaults."
-fi
-
 # 2. Run profiling
 cd "$TEST_TARGET"
 echo "> Preparing spherical example"
 python3 Prepare_Spherical_Example.py
 
-echo "> Running UFIT"
-./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+# 1. UFiT commands input check
+if [ -f "$TEST_INPUTS/ufit.dat" ]; then
+    echo "> Found ufit.dat in testInputs. Copying to target..."
+    cp "$TEST_INPUTS/ufit.dat" "$TEST_TARGET/"
+    
+    echo "> Running UFIT"
+    cd "$TEST_TARGET"
+    ./Run_UFiT -c ufit.dat
+else
+    echo "> WARNING: No ufit.dat found in ./testInputs. Running with default CLI parameters"
+    
+    echo "> Running UFIT"
+    cd "$TEST_TARGET"
+    ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+fi
 
 # 3. Run Unit Tests
 echo "> Building and running unit tests"
