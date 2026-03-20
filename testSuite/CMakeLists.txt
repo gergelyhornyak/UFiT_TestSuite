@@ -11,9 +11,8 @@ set(OBJECT_FILES
     ${UFIT_DIR}/UFiT_Definitions_Fortran.o
     ${UFIT_DIR}/UFiT_User_Functions.o
     ${UFIT_DIR}/UFiT_Functions_Fortran.o
+    ${UFIT_DIR}/UFiT_Python_Callable.o
 )
-
-enable_language(Fortran)
 
 message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
@@ -26,7 +25,19 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 
-add_executable(TestHub src/TestHub.cpp src/BlackBoxTest.cpp src/GreyBoxTest.cpp src/RegressionTest.cpp src/testSuiteHeader.cpp)
-target_link_libraries(TestHub PRIVATE GTest::gtest GTest::gtest_main)
+add_executable(TestHub 
+    src/TestHub.cpp 
+    src/BlackBoxTest.cpp 
+    src/GreyBoxTest.cpp 
+    src/RegressionTest.cpp 
+    src/initialize_variables_UnitTest.cpp
+    src/testSuiteHeader.cpp   
+    ${OBJECT_FILES}
+)
+target_link_libraries(TestHub PRIVATE 
+    GTest::gtest
+    GTest::gtest_main
+    gfortran
+)
 target_include_directories(TestHub PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
