@@ -3,11 +3,10 @@
 How to setup the test suite?
 
 1. Clone this repository
-2. Have docker and docker-compose installed: `(sudo) apt-get install docker docker.io docker-compose`
-3. run `(sudo) docker compose up (--build)`  \
-    sudo    if not superuser \
-    --build if you want to rebuild the base image \
-    usually takes around 10m 58s \
-5. You should see the logs in the command line, or
-6. Check them using `(sudo) docker logs testSuiteContainer`
-7. You should find the results in the /outputs directory
+2. Have docker installed: `(sudo) apt-get install docker docker.io`
+3. `docker build --progress=plain -t <image_name> .`
+4. `docker --debug run --rm -v $(pwd)/testInputs:/ProjectDir/testInputs -v $(pwd)/testOutputs:/ProjectDir/testOutputs --name <container_name> <image_name>` 
+5. You should see the logs in the command line, or can inspect them with `docker logs -f <container_name>`
+6. After test suite is finished, you should find the results in the /testOutputs directory
+
+*Step 4* ensures the reusability of the docker image built in *Step 3*. After building the base image, the container will read the input files every time its run.
