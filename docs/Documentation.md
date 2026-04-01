@@ -114,6 +114,7 @@ TODO
 - develop a technique to address and intercept Fortran data in a CPP function
 - create a set of test routines to be used, when new versions are pushed to Github
 - evaluate performance on a range of hardware.
+- UFiT Makefile suggestion: the Makefile could include a make clean & make profiling sections with the appropriate flags: `make FFLAGS="-O3 -fopenmp -pg -fprofile-arcs -ftest-coverage"` 
 
 *20. March, 2026*
 
