@@ -27,6 +27,7 @@ WORKDIR /ProjectDir/target
 
 RUN git clone https://github.com/Valentin-Aslanyan/UFiT.git UFiT \
     && cd UFiT && make
+RUN touch gmon.out
 
 COPY docker/requirements.txt .
 RUN pip install --upgrade pip && \
@@ -51,6 +52,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     graphviz \
     valgrind \
     lcov \
+    git \
+    #texlive-base texlive-latex-base dvipng texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra cm-super
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
