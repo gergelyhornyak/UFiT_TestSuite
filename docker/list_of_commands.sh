@@ -161,5 +161,5 @@ echo "--Software versions--" > "$TEST_OUTPUT/version.log"
 echo "> Logging Python package versions\n"
 echo "--Python package versions--" >> "$TEST_OUTPUT/version.log"
 pip freeze >> "$TEST_OUTPUT/version.log"
-
+echo "--END OF FILE--" >> "$TEST_OUTPUT/version.log"
 echo "==< Test Suite Pipeline Finished >=="
