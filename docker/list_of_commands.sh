@@ -41,7 +41,7 @@ make
 
 # Temporary debug version:
 echo "> Starting TestHub..."
-"$TEST_SUITE/build/TestHub" "$TEST_TARGET/" || echo "> TestHub CRASHED with exit code $?"
+"$TEST_SUITE/build/TestHub" "$TEST_TARGET/" > "$TEST_OUTPUT/testhub_output.txt" 2>&1 || echo "> TestHub CRASHED with exit code $?"
 
 #"$TEST_SUITE/build/TestHub" "$TEST_TARGET/" > "$TEST_OUTPUT/testHub_results.txt"
 
