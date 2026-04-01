@@ -6,6 +6,7 @@ export TEST_SUITE="/ProjectDir/testSuite"
 export TEST_TARGET="/ProjectDir/target/UFiT"
 export TEST_OUTPUT="/ProjectDir/testOutput"
 export TEST_INPUT="/ProjectDir/testInput"
+export ADDONS="/ProjectDir/testSuite/addons"
 export GTEST2HTML_PATH="/ProjectDir/gtest2html"
 export GTEST_OUTPUT="xml:$TEST_OUTPUT/gtest_report.xml"
 
@@ -49,7 +50,7 @@ echo "> Starting TestHub..."
 echo "> Running GTest2HTML for report generation"
 if [ -f "$TEST_OUTPUT/gtest_report.xml" ]; then
     echo "> Generating HTML Report..."
-    python3 $TEST_SUITE/addons/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
+    python3 $TEST_SUITE/$ADDONS/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
 fi
 
 echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
