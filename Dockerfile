@@ -27,7 +27,6 @@ WORKDIR /ProjectDir/target
 
 RUN git clone https://github.com/Valentin-Aslanyan/UFiT.git UFiT \
     && cd UFiT && make
-RUN touch gmon.out
 
 COPY docker/requirements.txt .
 RUN pip install --upgrade pip && \

@@ -55,6 +55,7 @@ fi
 echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
 
 cd "$TEST_TARGET"
+pwd
 
 echo "> [UNSKIP] Valgrind Memcheck"
 #echo "> [SKIP] Valgrind Memcheck"
@@ -77,7 +78,9 @@ valgrind --tool=massif \
 # 2.2) Profiling phase: gprof and gcov: '-p' argument
 
 # echo "> Make UFiT with profiling"
+pwd
 make FFLAGS="-O0 -fopenmp -pg -fprofile-arcs -ftest-coverage"
+./Run_UFiT -c ufit.dat
 
 # 2.3) Customising phase: change python codes to work with current setup
 #    ! [IMPORTANT]: this phase is due to the docker image has no UI to show graphics
@@ -101,6 +104,7 @@ make FFLAGS="-O0 -fopenmp -pg -fprofile-arcs -ftest-coverage"
 
 #echo "> [SKIP] Gprof profiler"
 echo "> [UNSKIP] Gprof profiler"
+
 gprof ./Run_UFiT gmon.out > $TEST_OUTPUT/gprofile.txt
 
 #echo "> [SKIP] Gcov profiler"
