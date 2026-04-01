@@ -11,7 +11,7 @@ export GTEST_OUTPUT="xml:$TEST_OUTPUT/gtest_report.xml"
 
 echo "==< Starting UFiT Test Suite Pipeline >=="
 
-# 1. Run profiling
+# 1. Run preliminary steps
 cd "$TEST_TARGET"
 echo "> Preparing spherical example"
 python3 Prepare_Spherical_Example.py
@@ -46,41 +46,38 @@ echo "> Starting TestHub..."
 #"$TEST_SUITE/build/TestHub" "$TEST_TARGET/" > "$TEST_OUTPUT/testHub_results.txt"
 
 # 4. Generate reports (GTest to HTML)
-echo "> Running GTest with for report generation"
+echo "> Running GTest2HTML for report generation"
 if [ -f "$TEST_OUTPUT/gtest_report.xml" ]; then
     echo "> Generating HTML Report..."
     python3 $TEST_SUITE/addons/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
 fi
 
-#echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
+echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
 
-#echo "> [UNSKIP] Valgrind Memcheck"
-echo "> [SKIP] Valgrind Memcheck"
-# valgrind --leak-check=full --show-leak-kinds=all -s \
-# --log-file="$TEST_OUTPUT/valgrindMemcheck.txt" \
-# ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+cd "$TEST_TARGET"
 
-#echo "> [UNSKIP] Valgrind Callgrind"
-echo "> [SKIP] Valgrind Callgrind"
-# valgrind --tool=callgrind --callgrind-out-file=$TEST_OUTPUT/valgrindCallgrind.txt \
-# --collect-jumps=yes \
-# ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+echo "> [UNSKIP] Valgrind Memcheck"
+#echo "> [SKIP] Valgrind Memcheck"
+valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s --verbose \
+--log-file="$TEST_OUTPUT/valgrindMemcheck.txt" \
+./Run_UFiT -c ufit.dat
 
-#echo "> [UNSKIP] Valgrind Massif"
-echo "> [SKIP] Valgrind Massif"
-# valgrind --tool=massif \
-# --massif-out-file="$TEST_OUTPUT/valgrindMassif.txt" \
-# ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
+echo "> [UNSKIP] Valgrind Callgrind"
+#echo "> [SKIP] Valgrind Callgrind"
+valgrind --tool=callgrind --callgrind-out-file=$TEST_OUTPUT/valgrindCallgrind.txt \
+--collect-jumps=yes \
+./Run_UFiT -c ufit.dat
 
-# replace with sed inplace adding "-pg" to Makefile
-# sed -i 's|$(FC) |$(FC) -pg -fprofile-arcs -ftest-coverage |' Makefile
-# echo "> Extended Makefile with 'pg, fprofile-arcs, ftest-coverage' arguments for profiling"
+echo "> [UNSKIP] Valgrind Massif"
+#echo "> [SKIP] Valgrind Massif"
+valgrind --tool=massif \
+--massif-out-file="$TEST_OUTPUT/valgrindMassif.txt" \
+./Run_UFiT -c ufit.dat
 
 # 2.2) Profiling phase: gprof and gcov: '-p' argument
 
-# second round: make with profiling
 # echo "> Make UFiT with profiling"
-# make
+make FFLAGS="-O0 -fopenmp -pg -fprofile-arcs -ftest-coverage"
 
 # 2.3) Customising phase: change python codes to work with current setup
 #    ! [IMPORTANT]: this phase is due to the docker image has no UI to show graphics
@@ -89,7 +86,7 @@ echo "> [SKIP] Valgrind Massif"
 # echo "> Comment out line to view 3D model with mlab"
 # sed -i 's|mlab.view|#mlab.view|' Visualize_Spherical_Example3D.py
 
-#sed -i 's|from mayavi import mlab|from mayavi import mlab\nmlab.options.offscreen = True|' Visualize_Spherical_Example3D.py
+# sed -i 's|from mayavi import mlab|from mayavi import mlab\nmlab.options.offscreen = True|' Visualize_Spherical_Example3D.py
 # sed -i 's|plt.show()|plt.savefig("Dipole_Example.png")|' Dipole_Example.py
 # sed -i 's|plt.show()|#plt.show()|' HMI_Example.py
 # sed -i 's|/change/this/path|./|' HMI_Example.py
@@ -98,53 +95,32 @@ echo "> [SKIP] Valgrind Massif"
 # echo "> Dipole Example"
 # python3 Dipole_Example.py
 
-# echo "> Run UFIT multiple times"
-# here most of the permutation of the CL program should be ran to produce accurate code coverage data
-# ./Run_UFiT
+# here the CLI program should be ran to produce accurate code coverage data
+# ./Run_UFiT -c ufit.dat
 # ./Run_UFiT -testWrongFlag 123
 
-# ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
-# ./Run_UFiT -g 1 -pp -nb -se -b Example.bin -i Example.inp -o Example.flf
-# ./Run_UFiT -g 1 -pp -nb -sc -b Example.bin -i Example.inp -o Example.flf
-# ./Run_UFiT -g 1 -pp -nb -cs -b Example.bin -i Example.inp -o Example.flf
+#echo "> [SKIP] Gprof profiler"
+echo "> [UNSKIP] Gprof profiler"
+gprof ./Run_UFiT gmon.out > $TEST_OUTPUT/gprofile.txt
 
-# ./Run_UFiT -g 2 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
-# ./Run_UFiT -g 2 -pp -nb -se -b Example.bin -i Example.inp -o Example.flf
-# ./Run_UFiT -g 2 -pp -nb -sc -b Example.bin -i Example.inp -o Example.flf
-
-# ./Run_UFiT -g 1 -pp -nb -sf -b Example.bin -i Example2.inp -o Example2.flf
-# ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example2.inp -o Example2.flf
-# ./Run_UFiT -g 2 -pp -nb -sf -b Example.bin -i Example2.inp -o Example2.flf
-# ./Run_UFiT -g 0 -pp -nb -sf -b Example.bin -i Example2.inp -o Example2.flf
-
-# ./Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -se -sf -sq -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole.flf
-# ./Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -nb -se -sf -sq -g 0 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_norm.flf
-# ./Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -ic -se -sf -sq -g 1 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_ic.flf
-# ./Run_UFiT -dl 0.005 -ms 5000 -np 4 -pp -ic -nb -se -sf -sq -g 0 -b ufit_dipole.bin -i ufitdipole.inp -o ufit_dipole_ic_norm.flf
-
-#echo "> [UNSKIP] Gprof profiler"
-echo "> [SKIP] Gprof profiler"
-#gprof ./Run_UFiT gmon.out > $TEST_OUTPUT/gprofile.txt
-
-#echo "> [UNSKIP] Gcov profiler"
-echo "> [SKIP] Gcov profiler"
-
-# gcov *.F90
-# lcov --gcov-tool gcov --capture --directory . --output-file coverage.info
-# genhtml --output-directory html coverage.info
-# mv html $TEST_OUTPUT/
-# mv coverage.info $TEST_OUTPUT/gcov_coverage.txt
-# mv $TEST_OUTPUT/html $TEST_OUTPUT/codeCoverageHTML
+#echo "> [SKIP] Gcov profiler"
+echo "> [UNSKIP] Gcov profiler"
+gcov *.F90
+lcov --gcov-tool gcov --capture --directory . --output-file coverage.info
+genhtml --output-directory html coverage.info
+mv html $TEST_OUTPUT/
+mv coverage.info $TEST_OUTPUT/gcov_coverage.txt
+mv $TEST_OUTPUT/html $TEST_OUTPUT/codeCoverageHTML
 
 # 2.4) Profiling phase: plotting results
 
-#echo "> [UNSKIP] Plot profiling scores: gprof, callgrind, memcheck, massif"
-echo "> [SKIP] Plot profiling scores: gprof, callgrind, memcheck, massif"
+#echo "> [SKIP] Plot profiling scores: gprof, callgrind, memcheck, massif"
+echo "> [UNSKIP] Plot profiling scores: gprof, callgrind, memcheck, massif"
 
-# python3 $TEST_SUITE/$ADDONS/gprof2dot.py $TEST_OUTPUT/gprofile.txt | dot -Tpng -o $TEST_OUTPUT/gprofDiagram.png
-# python3 $TEST_SUITE/$ADDONS/gprof2dot.py --format=callgrind $TEST_OUTPUT/valgrindCallgrind.txt | dot -Tpng -o $TEST_OUTPUT/callgrindDiagram.png
-# python3 $TEST_SUITE/$ADDONS/massifPlotter.py $TEST_OUTPUT/valgrindMassif.txt $TEST_OUTPUT/massifDiagram.png
-# python3 $TEST_SUITE/$ADDONS/memcheckPlotter.py $TEST_OUTPUT/valgrindMemcheck.txt $TEST_OUTPUT/memcheckDiagram.png
+python3 $TEST_SUITE/$ADDONS/gprof2dot.py $TEST_OUTPUT/gprofile.txt | dot -Tpng -o $TEST_OUTPUT/gprofDiagram.png
+python3 $TEST_SUITE/$ADDONS/gprof2dot.py --format=callgrind $TEST_OUTPUT/valgrindCallgrind.txt | dot -Tpng -o $TEST_OUTPUT/callgrindDiagram.png
+python3 $TEST_SUITE/$ADDONS/massifPlotter.py $TEST_OUTPUT/valgrindMassif.txt $TEST_OUTPUT/massifDiagram.png
+python3 $TEST_SUITE/$ADDONS/memcheckPlotter.py $TEST_OUTPUT/valgrindMemcheck.txt $TEST_OUTPUT/memcheckDiagram.png
 
 echo "> [SKIP] Visualize Spherical Example"
 #python3 Visualize_Spherical_Example.py
@@ -160,7 +136,6 @@ echo "> [SKIP] HMI Example"
 #python3 HMI_Example.py
 [ -f HMI_Example.png ] && mv HMI_Example.png $TEST_OUTPUT/HMI_Example.png
 
-# 3) Testing phase: running unit tests, black box and grey box tests, regression tests
 
 # 4) Versions phase: log every 3rd Party Software's version
 
@@ -179,7 +154,7 @@ echo "--Software versions--" > "$TEST_OUTPUT/version.log"
     gcov --version | head -n 1
     lcov --version || echo "lcov not found"
     valgrind --version || echo "valgrind not found"
-    tex --version || echo "tex not found"
+    #tex --version || echo "tex not found"
     dot -V 2>&1 || echo "Graphviz not found"
 } >> "$TEST_OUTPUT/version.log"
 
