@@ -1,22 +1,7 @@
 #include "testSuiteHeader.hpp"
 
-/* 78 subroutine
-ORDER:
-initialize_variables,
-parse_command_args
-parse_command_file
-load_input
-load_Bfield
-process_Bfield
-get_available_resource
-run_trace
-write_output
-cleanup
-*/
-
 extern "C" {
 
-    //float __ufit_functions_fortran_MOD_vecdot(float *vec1, float *vec2);
     extern int __ufit_definitions_fortran_MOD_geometry;
     extern int __ufit_definitions_fortran_MOD_bfile_type;
     extern int __ufit_definitions_fortran_MOD_input_type;
@@ -66,7 +51,7 @@ std::string getFortranString(const char* fortranString, size_t maxLen) {
     return s;
 }
 
-TEST(TestUFiTFunction, TestInitializeVariables) {
+TEST(InitializeVariables, CorrectInit) {
     __ufit_functions_fortran_MOD_initialize_variables();
     EXPECT_EQ(__ufit_definitions_fortran_MOD_geometry, 0) << "Geometry should be initialized to 0, but got: " << __ufit_definitions_fortran_MOD_geometry << "\n";
     EXPECT_EQ(__ufit_definitions_fortran_MOD_bfile_type, -1);
