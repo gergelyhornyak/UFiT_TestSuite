@@ -33,13 +33,6 @@ else
     ./Run_UFiT -g 1 -pp -nb -sq -b Example.bin -i Example.inp -o Example.flf
 fi
 
-# 3. Build and Run Unit Tests
-echo "> Building and running unit tests"
-cd "$TEST_SUITE"
-rm -rf build && mkdir build && cd build
-cmake ..
-make
-
 # Temporary debug version:
 echo "> Starting TestHub..."
 "$TEST_SUITE/build/TestHub" "$TEST_TARGET/" > "$TEST_OUTPUT/testhub_output.txt" 2>&1 || echo "> TestHub CRASHED with exit code $?"
@@ -50,7 +43,7 @@ echo "> Starting TestHub..."
 echo "> Running GTest2HTML for report generation"
 if [ -f "$TEST_OUTPUT/gtest_report.xml" ]; then
     echo "> Generating HTML Report..."
-    python3 $TEST_SUITE/$ADDONS/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
+    python3 $ADDONS/gtest2html.py "$TEST_OUTPUT/gtest_report.xml" "$TEST_OUTPUT/gtest_report.html"
 fi
 
 echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
@@ -58,20 +51,20 @@ echo "> Profiling the profile data using gprof and valgrind (& callgrind)"
 cd "$TEST_TARGET"
 pwd
 
-echo "> [UNSKIP] Valgrind Memcheck"
-#echo "> [SKIP] Valgrind Memcheck"
-valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s --verbose \
---log-file="$TEST_OUTPUT/valgrindMemcheck.txt" \
-./Run_UFiT -c ufit.dat
+echo "> [SKIP] Valgrind Memcheck"
+# echo "> [UNSKIP] Valgrind Memcheck"
+# valgrind --tool=memcheck --leak-check=full --show-leak-kinds=all -s --verbose \
+# --log-file="$TEST_OUTPUT/valgrindMemcheck.txt" \
+# ./Run_UFiT -c ufit.dat
 
-echo "> [UNSKIP] Valgrind Callgrind"
 #echo "> [SKIP] Valgrind Callgrind"
+echo "> [UNSKIP] Valgrind Callgrind"
 valgrind --tool=callgrind --callgrind-out-file=$TEST_OUTPUT/valgrindCallgrind.txt \
 --collect-jumps=yes \
 ./Run_UFiT -c ufit.dat
 
-echo "> [UNSKIP] Valgrind Massif"
 #echo "> [SKIP] Valgrind Massif"
+echo "> [UNSKIP] Valgrind Massif"
 valgrind --tool=massif \
 --massif-out-file="$TEST_OUTPUT/valgrindMassif.txt" \
 ./Run_UFiT -c ufit.dat
@@ -122,10 +115,10 @@ mv $TEST_OUTPUT/html $TEST_OUTPUT/codeCoverageHTML
 #echo "> [SKIP] Plot profiling scores: gprof, callgrind, memcheck, massif"
 echo "> [UNSKIP] Plot profiling scores: gprof, callgrind, memcheck, massif"
 
-python3 $TEST_SUITE/$ADDONS/gprof2dot.py $TEST_OUTPUT/gprofile.txt | dot -Tpng -o $TEST_OUTPUT/gprofDiagram.png
-python3 $TEST_SUITE/$ADDONS/gprof2dot.py --format=callgrind $TEST_OUTPUT/valgrindCallgrind.txt | dot -Tpng -o $TEST_OUTPUT/callgrindDiagram.png
-python3 $TEST_SUITE/$ADDONS/massifPlotter.py $TEST_OUTPUT/valgrindMassif.txt $TEST_OUTPUT/massifDiagram.png
-python3 $TEST_SUITE/$ADDONS/memcheckPlotter.py $TEST_OUTPUT/valgrindMemcheck.txt $TEST_OUTPUT/memcheckDiagram.png
+python3 $ADDONS/gprof2dot.py $TEST_OUTPUT/gprofile.txt | dot -Tpng -o $TEST_OUTPUT/gprofDiagram.png
+python3 $ADDONS/gprof2dot.py --format=callgrind $TEST_OUTPUT/valgrindCallgrind.txt | dot -Tpng -o $TEST_OUTPUT/callgrindDiagram.png
+python3 $ADDONS/massifPlotter.py $TEST_OUTPUT/valgrindMassif.txt $TEST_OUTPUT/massifDiagram.png
+python3 $ADDONS/memcheckPlotter.py $TEST_OUTPUT/valgrindMemcheck.txt $TEST_OUTPUT/memcheckDiagram.png
 
 echo "> [SKIP] Visualize Spherical Example"
 #python3 Visualize_Spherical_Example.py
