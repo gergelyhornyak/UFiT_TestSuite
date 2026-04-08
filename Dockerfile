@@ -1,12 +1,14 @@
-FROM ubuntu:22.04 AS builder
+FROM ubuntu:22.04 AS builder 
 #already minimal ~ 30 MB
 
 LABEL maintainer="Gergely Hornyak <gergely.hornyak.1@gmail.com>"
 
 WORKDIR /build
 
+# Install build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    ca-certificates \
     cmake \
     gfortran \
     g++ \
@@ -16,58 +18,69 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Pre-build GoogleTest (so the script doesn't have to)
+# Pre-build GoogleTest
 RUN git clone https://github.com/google/googletest.git -b v1.16.0 /opt/googletest \
     && cd /opt/googletest && mkdir build && cd build \
     && cmake -DCMAKE_INSTALL_PREFIX=/usr/local .. \
-    && make \
-    && make install
+    && make && make install
 
 WORKDIR /ProjectDir/target
 
+# Pre-build UFiT
 RUN git clone https://github.com/Valentin-Aslanyan/UFiT.git UFiT \
-    && cd UFiT && make
+    && cd UFiT \
+    && make
 
+WORKDIR /ProjectDir
+
+# Install Python dependencies for the test suite
 COPY docker/requirements.txt .
 RUN pip install --upgrade pip && \
-    pip install --user --no-cache-dir -r requirements.txt
+    pip install --no-cache-dir --prefix=/install -r requirements.txt
 
 #--------------------------------------------------------#
 
 FROM ubuntu:22.04 AS runner
 
-ENV PATH="/root/.local/bin:$PATH" \
-    PYTHONPATH="/root/.local/lib/python3.10/site-packages"
+ENV PYTHONPATH="/usr/local/lib/python3.10/site-packages"
 
 WORKDIR /ProjectDir
 
+# Install runtime dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3 \
-    python3-pip \
     gfortran \
     build-essential \
     cmake \
+    make \
     g++ \
     graphviz \
     valgrind \
     lcov \
-    git \
     #texlive-base texlive-latex-base dvipng texlive-fonts-recommended texlive-fonts-extra texlive-latex-extra cm-super
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# Copy the built python packages 
+COPY --from=builder /install/local/. /usr/local/ 
+# Copy the built GoogleTest libraries and headers
 COPY --from=builder /usr/local/include/gtest /usr/local/include/gtest
 COPY --from=builder /usr/local/lib/libgtest* /usr/local/lib/
-RUN ldconfig
-
-COPY --from=builder /root/.local /root/.local
+# Copy the built UFiT binaries
 COPY --from=builder /ProjectDir/target /ProjectDir/target
 
-RUN mkdir -p testSuite testOutput testInput
+WORKDIR /ProjectDir
 
+RUN mkdir -p testSuite
 COPY testSuite/ ./testSuite/
-COPY docker/list_of_commands.sh ./
+RUN cd testSuite \
+    && rm -rf build \
+    && mkdir build && cd build \
+    && cmake .. && make
 
-RUN chmod +x list_of_commands.sh
+# Update the shared library cache
+RUN ldconfig
 
-ENTRYPOINT ["/bin/bash", "/ProjectDir/list_of_commands.sh"]
+# Set the entry point to run the test suite script
+# The scripts/ dir is mounted at runtime
+ENTRYPOINT ["/bin/bash", "/ProjectDir/scripts/list_of_commands_modular.sh"]
