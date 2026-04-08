@@ -12,7 +12,7 @@ TEST(TestGBTUFiTCommandLine, TestCorrectInputFile) {
     EXPECT_NO_THROW(std::system(command.c_str()));
 }
 
-TEST(TestGBTUFiTCommandLine, TestMissingInputFile) {
+TEST(DISABLED_TestGBTUFiTCommandLine, TestMissingInputFile) {
     GTEST_SKIP() << "Skipping TestMissingInputFile test";
     int expectedExitCode = 28416;
     printf("TEST NAME: missing input file \n");

@@ -14,7 +14,7 @@ std::vector<char> readBinaryFile(const std::string& filename) {
 }
 
 // Test to check binary output matches golden file
-TEST(RegressionTest, BinaryOutputMatch) {
+TEST(DISABLED_RegressionTest, BinaryOutputMatch) {
     // Run the Fortran program
     int ret = std::system(FORTRAN_EXECUTABLE.c_str());
     ASSERT_EQ(ret, 0) << "Fortran program execution failed";

@@ -1,7 +1,7 @@
 #include "testSuiteHeader.hpp"
 
-TEST(TestUFiTCommandLine, TestStepSize) {
-    GTEST_SKIP() << "Skipping TestStepSize test";
+TEST(DISABLED_TestUFiTCommandLine, TestStepSize) {
+    RecordProperty("priority", "low");
     int testCasesSize = 11;
     std::string *commands = new std::string[testCasesSize];
     int *exitCodes = new int[testCasesSize];
