@@ -1,12 +1,31 @@
 # Test Suite Documentation
 
-## Setup
+## Manual Setup
 
-[**How to setup the test suite?**](Setup.md)
+*How to setup the test suite?*
 
-You should find the results in the /testOutputs directory:
+1. Clone this repository
+2. Have docker installed: `(sudo) apt-get install docker docker.io`
+3. Run `mkdir -p testInput testOutput`
+4. `docker --debug build --progress=plain --pull=false -t <image_name> .`
+5. `docker --debug run --rm --network none -v $(pwd)/testInput:/ProjectDir/testInput -v $(pwd)/testOutput:/ProjectDir/testOutput -v $(pwd)/docker:/ProjectDir/scripts --name <container_name> <image_name> > ./testOutput/runtime_log.txt 2>&1` 
+6. You should see the logs in the command line, or can inspect them with `docker logs -f <container_name>`
+
+After the container stops, you should find the results in the **/testOutputs directory**:
 - GoogleTest results **gtest_report.html** can be opened in a browser
 - LCov code coverage index.html can be opened in a browser
+
+## Automated Setup
+
+Run the setup script: `./setup_script.sh` will show the options
+
+### Notes
+
+*Step 4* ensures the reusability of the docker image built in *Step 3*. After building the base image, the container will read the input files every time it is run. Additionally *Step 4* automatically removes the container and its associated anonymous volumes when it exits.
+
+Rootless mode is highly advised: https://docs.docker.com/engine/security/rootless/
+
+For offline use, you can run `docker -f OfflineDockerFile`
 
 ## Repository Architecture
 
@@ -52,7 +71,21 @@ Repository architecture is as follows:
 
 inaccessible
 
-## GoogleTest Extensibility
+## Test Suite Extensibility
+
+The main script running the tests can be found in the /docker directory called **list_of_commands.sh**. This script is fairly easily modifiable, since it is a bash script with rich comments.
+
+Phases and subprocesses can be changed or skipped, according to desired run time and results. To do this, comment out the line and optionally change the logs to reflect the ignore of the process.
+
+In case any new 3rd Party Software is introduced to the UFiT, and is mandatory for the testing, then it should also be added to the Test Suite in the following way:
+
+- if it is a Python dependency, then appending it to the **/docker/requirements.txt** file should be enough.
+- if it is a free software, such as **git**, then it should be added to the **Dockerfile** file inside the **Install dependencies** section.
+- if it is a licenced software, such as 'Intel V-Tune', then it should be added in the **list_of_commands.sh** file, and needs to be downloaded, unpacked, installed, built, and linked (the GTest installation is an example for this case).
+
+> Important note: if the UFiT repository structure changes, any file name changes or any source code is changed which affects the command line functionality, then the Test Suite should be altered accordingly, to reflect the changes.
+
+### GoogleTest
 
 Unit tests are written in C++ ([docs](https://en.cppreference.com/w/)) and it uses GoogleTest framework ([docs](https://google.github.io/googletest/)). In order to extend the test suite with new unit tests, developers can add a new `TEST()` section inside the appropriate source file in the **src/** directory, in the following way:
  
@@ -79,19 +112,9 @@ GTEST_SKIP() << "REASON";
 
 Then, after compiling the source files with the GTest libraries, the executable will run the tests sequentially.
 
-## Test Suite Alterations
+### Plotting
 
-The main script running the tests can be found in the /docker directory called **list_of_commands.sh**. This script is fairly easily modifiable, since it is a bash script with rich comments.
-
-Phases and subprocesses can be changed or skipped, according to desired run time and results. To do this, comment out the line and optionally change the logs to reflect the ignore of the process.
-
-In case any new 3rd Party Software is introduced to the UFiT, and is mandatory for the testing, then it should also be added to the Test Suite in the following way:
-
-- if it is a Python dependency, then appending it to the **/docker/requirements.txt** file should be enough.
-- if it is a free software, such as **git**, then it should be added to the **Dockerfile** file inside the **Install dependencies** section.
-- if it is a licenced software, such as 'Intel V-Tune', then it should be added in the **list_of_commands.sh** file, and needs to be downloaded, unpacked, installed, built, and linked (the GTest installation is an example for this case).
-
-> Important note: if the UFiT repository structure changes, any file name changes or any source code is changed which affects the command line functionality, then the Test Suite should be altered accordingly, to reflect the changes.
+Plotting scripts can be added to the addons/ directory, and then linked inside the script PLOTTING section
 
 ## Docker notes
 
