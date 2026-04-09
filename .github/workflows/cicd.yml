@@ -23,5 +23,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-report
-          path: /ProjectDir/testOutput/htmlReport/gtest_report.html  # Path inside the runner
+          path: ${{ github.workspace }}/testOutput/htmlReport/gtest_report.html  # Path inside the runner
       
