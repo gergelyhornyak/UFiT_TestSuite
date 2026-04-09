@@ -1,0 +1,21 @@
+name: Run UFIT tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu:22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Build Docker image
+        run: docker --debug build --progress=plain --pull=true -t test-suite-image .
+
+      - name: Run tests
+        run: docker --debug run --rm -v ${{ github.workspace }}/testInput:/ProjectDir/testInput -v ${{ github.workspace }}/testOutput:/ProjectDir/testOutput -v ${{ github.workspace }}/docker:/ProjectDir/scripts --name test-suite-container test-suite-image
+      
