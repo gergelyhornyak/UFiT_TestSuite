@@ -24,4 +24,8 @@ jobs:
         with:
           name: test-report
           path: ${{ github.workspace }}/testOutput/htmlReport  # Path inside the runner
+          retention-days: 1
+          overwrite: true
+
+
       
