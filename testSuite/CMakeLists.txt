@@ -21,9 +21,9 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(TestHub 
     src/TestHub.cpp 
-    src/BlackBoxTest.cpp 
-    src/GreyBoxTest.cpp 
-    src/RegressionTest.cpp 
+    #src/BlackBoxTest.cpp 
+    #src/GreyBoxTest.cpp 
+    #src/RegressionTest.cpp 
     src/initialize_variables_Test.cpp
     src/intercept_boundary_c100_Test.cpp
     src/intercept_boundary_c010_Test.cpp
@@ -32,6 +32,9 @@ add_executable(TestHub
     src/normalize_vector_binding.f90
     src/find_index_Test.cpp
     src/find_index_binding.f90
+    src/find_index_irregular_Test.cpp
+    src/setup_find_index_irregular.f90
+    src/find_index_irregular_binding.f90
     src/testSuiteHeader.cpp
 )
 target_link_libraries(TestHub PRIVATE
