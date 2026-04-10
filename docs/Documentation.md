@@ -132,6 +132,12 @@ The docker container has access to the local drive, and fetches the input direct
 
 > In case of storage overflow, run `docker -D ps` to see the built images.
 
+## CICD
+
+Using Github Actions
+
+
+
 TODO
 
 - develop a technique to address and intercept Fortran data in a CPP function
