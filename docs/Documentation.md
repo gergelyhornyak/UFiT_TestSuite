@@ -1,6 +1,8 @@
 # Test Suite Documentation
 
-## Manual Setup
+## Setup
+
+### Manual Setup
 
 *How to setup the test suite?*
 
@@ -15,7 +17,7 @@ After the container stops, you should find the results in the **/testOutputs dir
 - GoogleTest results **gtest_report.html** can be opened in a browser
 - LCov code coverage index.html can be opened in a browser
 
-## Automated Setup
+### Automated Setup
 
 Run the setup script: `./setup_script.sh` will show the options
 
@@ -31,12 +33,12 @@ For offline use, you can run `docker -f OfflineDockerFile`
 
 Repository architecture is as follows:
 
-- root: Dockerfile for running Docker container, and the README
+- root: Dockerfile for running Docker container, and the README,
 - /.github: github workflow directory for automated tests,
-- /docker: contains the main script and the python venv requirements
+- /docker: contains the main script, its config file, and the python venv requirements,
 - /docs: documentation directory,
 - /target [*automatically created*]: directory for target source code UFiT
-- /testOutputs: output of the test suite, including figure(s), data, log(s)
+- /testOutputs: output of the test suite, including figure(s), data, log(s), and html dir
 - /testSuite:
     - /testSuite/addons: Python script(s) for mainly plotting the profiling data
     - /testSuite/src: source file(s) of the unit test(s)
@@ -44,8 +46,6 @@ Repository architecture is as follows:
     - /testSuite/goldenFiles: golden files for checking outputs or inputs
 - /testInputs:
     - ufit.dat
-
-<div style="page-break-after: always;"></div>
 
 ## Fortran Interoperability
 
@@ -63,6 +63,9 @@ Repository architecture is as follows:
 
 `float __ufit_functions_fortran_MOD_vecdot(float *vec1, float *vec2);`
 
+Functions which utilise built-in Fortran functions such as SQRT() or MIN() need a wrapper subroutine separately. 
+Functions which utilise global variables need a setup wrapper to initialise the global variables.
+
 ### Global variables
 
 `extern double __ufit_functions_fortran_MOD_grid1max;`
@@ -70,6 +73,16 @@ Repository architecture is as follows:
 ### Local variables
 
 inaccessible
+
+## Test cases
+
+- UFiT_Functions_Fortran normalize_vector()
+- UFiT_Functions_Fortran vecdot()
+- UFiT_Functions_Fortran find_index()
+- UFiT_Functions_Fortran_find_index_irregular()
+- UFiT_Functions_Fortran intercept_boundary_c010()
+- UFiT_Functions_Fortran intercept_boundary_c100()
+- UFiT_Functions_Fortran initialize_variables()
 
 ## Test Suite Extensibility
 
@@ -80,10 +93,12 @@ Phases and subprocesses can be changed or skipped, according to desired run time
 In case any new 3rd Party Software is introduced to the UFiT, and is mandatory for the testing, then it should also be added to the Test Suite in the following way:
 
 - if it is a Python dependency, then appending it to the **/docker/requirements.txt** file should be enough.
-- if it is a free software, such as **git**, then it should be added to the **Dockerfile** file inside the **Install dependencies** section.
+- if it is a free software, such as **git**, then it should be added to the **Dockerfile** file, and the script.
 - if it is a licenced software, such as 'Intel V-Tune', then it should be added in the **list_of_commands.sh** file, and needs to be downloaded, unpacked, installed, built, and linked (the GTest installation is an example for this case).
 
-> Important note: if the UFiT repository structure changes, any file name changes or any source code is changed which affects the command line functionality, then the Test Suite should be altered accordingly, to reflect the changes.
+> Important note: if the UFiT repository structure, or any file name, or any source code is changed which affects the command line functionality, then the Test Suite should be altered accordingly, to reflect the changes.
+
+
 
 ### GoogleTest
 
@@ -134,16 +149,17 @@ The docker container has access to the local drive, and fetches the input direct
 
 ## CICD
 
-Using Github Actions
+*Using Github Actions*
+
+Github Actions can be configured to run the test suite everytime a push or better a pull request is created for UFiT. Then the CICD pipeline will run a test with the current feature to test it.
 
 
-
-TODO
+## TODO
 
 - develop a technique to address and intercept Fortran data in a CPP function
-- create a set of test routines to be used, when new versions are pushed to Github
+- create a set of test routines to be used, when new versions are pushed to Github ✅
 - evaluate performance on a range of hardware.
 - UFiT Makefile suggestion: the Makefile could include a make clean & make profiling sections with the appropriate flags: `make FFLAGS="-O3 -fopenmp -pg -fprofile-arcs -ftest-coverage"` 
 
-*20. March, 2026*
+*10. April, 2026*
 
