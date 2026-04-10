@@ -1,10 +1,10 @@
-#include "testSuiteHeader.hpp"
+    #include "testSuiteHeader.hpp"
 
-std::string ufit_dir_path = "$TEST_TARGET/$TEST_TARGET_NAME/";
+    std::string ufit_dir_path = "$TEST_TARGET/$TEST_TARGET_NAME/";
 
-int main(int argc, char **argv) {
-    ::testing::InitGoogleTest(&argc, argv);
+    int main(int argc, char **argv) {
+        ::testing::InitGoogleTest(&argc, argv);
 
-    // Run all tests
-    return RUN_ALL_TESTS();
-}
+        // Run all tests
+        return RUN_ALL_TESTS();
+    }

@@ -7,26 +7,41 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "-O3")
 
 set(UFIT_DIR "/ProjectDir/target/UFiT")
-set(OBJECT_FILES
-    ${UFIT_DIR}/UFiT_Definitions_Fortran.o
-    ${UFIT_DIR}/UFiT_User_Functions.o
-    ${UFIT_DIR}/UFiT_Functions_Fortran.o
+
+add_library(UFiT_Fortran_Lib STATIC
+    ${UFIT_DIR}/UFiT_Definitions_Fortran.F90
+    ${UFIT_DIR}/UFiT_User_Functions.F90
+    ${UFIT_DIR}/UFiT_Functions_Fortran.F90
+    ${UFIT_DIR}/UFiT_Python_Callable.F90
 )
-
-enable_language(Fortran)
-
-message(STATUS "Build type: ${CMAKE_BUILD_TYPE}")
 
 find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)    
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
-file(MAKE_DIRECTORY ${CMAKE_SOURCE_DIR}/lib)
-SET(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
-
-add_executable(TestHub src/TestHub.cpp src/BlackBoxTest.cpp src/GreyBoxTest.cpp src/RegressionTest.cpp src/testSuiteHeader.cpp)
-target_link_libraries(TestHub PRIVATE GTest::gtest GTest::gtest_main)
+add_executable(TestHub 
+    src/TestHub.cpp 
+    #src/BlackBoxTest.cpp 
+    #src/GreyBoxTest.cpp 
+    #src/RegressionTest.cpp 
+    src/initialize_variables_Test.cpp
+    src/intercept_boundary_c100_Test.cpp
+    src/intercept_boundary_c010_Test.cpp
+    src/vecdot_Test.cpp
+    src/normalize_vector_Test.cpp
+    src/normalize_vector_binding.f90
+    src/find_index_Test.cpp
+    src/find_index_binding.f90
+    src/find_index_irregular_Test.cpp
+    src/setup_find_index_irregular.f90
+    src/find_index_irregular_binding.f90
+    src/testSuiteHeader.cpp
+)
+target_link_libraries(TestHub PRIVATE
+    GTest::gtest
+    GTest::gtest_main
+    gfortran
+    UFiT_Fortran_Lib
+)
 target_include_directories(TestHub PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 

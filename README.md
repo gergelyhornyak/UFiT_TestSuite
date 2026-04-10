@@ -1,22 +1,22 @@
-# Individual Research Project
+# UFiT Test Suite
 
-Individual Research Project for CU MSci CompSci degree
-The project aims to develop the Test Suite for unit testing and benchmarking a scientific software.
+**A modern testing suite for scientific Fortran code**
 
-- develop a technique to address and intercept Fortran data in a CPP function
-- create a set of test routines to be used, when new versions are pushed to Github
-- evaluate performance on a range of hardware.
+> Started as an individual research project for CU MSci CompSci degree.
 
-![docker layout](./images/structure.png)
+The project aims to develop a Test Suite for 1) unit testing and 2) benchmarking a scientific software.
 
-Table Of Content:
+## Table Of Content:
 
-- [Setup instructions](./docs/Setup.md)
-- [Repository architecture](./docs/Architecture.md)
-- [Project Roadmap](./docs/RoadMap.md)
-- [Project Journal](./docs/Journal.md)
+- [Project Documentation](./docs/Documentation.md)
 
-Branches:
+## Branches:
 
 main, release, develop, feature, hotfix
 
+> Following GIT-Flow workflow [git-flow figure](https://nvie.com/img/git-model@2x.png)
+
+## Contribution
+
+Jozsef Gergely Hornyak - as main developer
+Valentin Aslanyan - as supervisor and UFiT developer
